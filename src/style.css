@@ -1,0 +1,363 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: gopher, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    box-sizing: border-box;
+}
+
+#brazil-product-page {
+    background-color: #013936;
+}
+
+#homepage-body {
+  background-color: #F8EADA;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.webgl
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+
+
+/**
+*  GENERAL STYLES
+**/
+
+@font-face {
+    font-family: 'BNBrickHouse';
+    src: url("/static/fonts/BNBrickHouse.otf") format("opentype");
+}
+
+h1 {
+  font-family: 'BNBrickHouse';
+}
+
+h2 {
+  font-family: 'BNBrickHouse';
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 18px;
+}
+
+#logo {
+  margin-top: .8em;
+  width: 15rem;
+}
+
+.section
+{
+    height: 100vh;
+    position: relative;
+    font-size: 7vmin;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+
+/**
+*  HOMEPAGE STYLES
+**/
+
+#hero-section {
+  color: #013936;
+}
+
+#hero-section #hero {
+  padding-top: 1.5rem;
+  text-align: right;
+}
+
+
+
+
+/**
+*  PRODUCT PAGE STYLES
+**/
+
+#brazil-product h1 {
+  font-size: 5.5rem;
+}
+
+#brazil-product h2 {
+  font-size: 2.2rem;
+  margin-top: 1.5rem;
+}
+
+#support h2,
+#shop h2 {
+    font-size: 4.2rem;
+    font-family: 'BNBrickHouse';
+}
+
+
+.btn {
+  font-family: 'BNBrickHouse';
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+  background-color: #013936;
+  border-radius: 50px;
+  color: #F8EADA;
+  padding: 0.75rem 2rem;
+  text-transform: uppercase;
+  transition: ease-in-out .25s;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #E99A7E;
+}
+
+
+#product-section {
+    display: block;
+    color: #E3C29E;
+}
+
+#product-section h2 {
+    font-family: gopher, sans-serif;
+}
+
+
+
+#brazil-product {
+    margin-top: 2em;
+}
+
+/**
+*  Support Section Styles
+**/
+
+#support {
+    padding-top: 3rem;
+    width: 66%;
+    color: #E3C29E;
+}
+
+#support h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 2rem 0;
+}
+
+#support p {
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 2;
+    padding-top: 1rem;
+}
+
+
+/**
+*   Shop Section Styles
+**/
+
+#shop {
+    background-color: #F8EADA;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+#shop h2 {
+    color: #013936;
+}
+
+#section-headline {
+    display: block;
+    margin-bottom: 1.8rem;
+}
+
+#explore {
+  background-color: #E99A7E;
+  color: #013936;
+  font-size: 1rem;
+  padding: 1.2rem 2rem;
+}
+
+#explore:hover {
+  background-color: #F8EADA;
+  cursor: pointer;
+}
+
+/** 
+*   Shop Card Items
+**/
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards__item {
+  display: flex;
+  padding: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .cards__item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 56rem) {
+  .cards__item {
+    width: 33.3333%;
+  }
+}
+
+.card {
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card:hover .card__image {
+  filter: contrast(100%);
+}
+
+.card__content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1rem;
+  position: relative;
+}
+
+.card__image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  position: relative;
+  transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+}
+
+.card__image::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%;
+}
+
+@media (min-width: 40rem) {
+  .card__image::before {
+    padding-top: 66.6%;
+  }
+}
+
+.card__image--flowers {
+    background-image: url(/static/img/brazil_blend_800x600.jpg);
+}
+.card__image--river {
+    background-image: url(/static/img/brazil_blend_800x600.jpg);
+}
+.card__image--record {
+    background-image: url(/static/img/brazil_blend_800x600.jpg);
+}
+.card__image--fence {
+    background-image: url(/static/img/brazil_blend_800x600.jpg);
+}
+
+.card__title {
+  font-size: 2rem;
+  font-weight: 300;
+  color: #013936;
+  font-family: 'BNBrickHouse';
+  margin-bottom: 1rem;
+}
+
+.card_text {
+  flex: 1 1 auto;
+  color: #013936;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+  font-weight: lighter;
+}
+
+.card_price {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.card_product_weight {
+    font-weight: lighter;
+}
+
+.card__btn {
+  position: absolute;
+  right: 0;
+  bottom: 1.5rem;
+}
+
+
+
+/**
+*   FOOTER
+**/
+
+#footer {
+  height: auto;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: #E3C29E;
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr;
+  grid-gap: 1rem;
+  align-content: space-between;
+}
+
+#footer > div > h3 {
+  font-family: 'BNBrickHouse';
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #013936;
+}
+
+#footer > div > p {
+  color: #013936;
+  line-height: 2.2;
+}
+
+#footer > div > p > a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #013936;
+}
+
+#footer > div:nth-child(3) {
+  position: relative;
+}
+
+#footer > div:nth-child(3) img{
+  width: 5rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
