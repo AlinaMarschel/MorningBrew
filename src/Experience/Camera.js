@@ -16,6 +16,7 @@ export default class Camera
         this.setOrbitControls()
         this.resize()
         this.setCursor()
+        this.setScroll()
         this.update()
     }
 
@@ -27,6 +28,17 @@ export default class Camera
         window.addEventListener('mousemove', (event) => {
             this.cursor.x = event.clientX / this.sizes.width - 0.5
             this.cursor.y = event.clientY / this.sizes.height - 0.5
+        })
+    }
+
+    setScroll()
+    {
+        this.scrollY = window.scrollY
+        this.currentSection = 0
+
+        window.addEventListener('scroll', () => {
+            this.scrollY = window.scrollY
+            this.newSection = Math.round(this.scrollY / this.sizes.height)
         })
     }
 
@@ -57,6 +69,8 @@ export default class Camera
 
     animateCamera()
     {
+        this.instance.position.y = -this.scrollY / this.sizes.height * 4
+
         let parallaxX = this.cursor.x * 0.3
         let parallaxY = -this.cursor.y * 0.3
 
