@@ -3,6 +3,7 @@ import Experience from "../Experience";
 import Coffeebag from './Coffeebag';
 import Coffeebeans from './Coffeebeans';
 import Globe from './Globe';
+import Particle from './Particle';
 
 
 export default class World 
@@ -20,8 +21,19 @@ export default class World
             this.coffeebag = new Coffeebag()
             this.coffeebeans = new Coffeebeans()
             this.globe = new Globe()
+            this.particles = new Particle()
             console.log('resources are ready')
         })
+
+        this.update()
+    }
+
+    update()
+    {
+        if(this.coffeebeans) 
+        {
+            this.coffeebeans.update()
+        }
     }
 
 }

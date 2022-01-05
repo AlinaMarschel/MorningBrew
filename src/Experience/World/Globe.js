@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import Experience from "../Experience";
+import gsap from 'gsap'
 
 export default class Globe
 {
@@ -16,19 +17,8 @@ export default class Globe
         this.setTexture()
         this.setMaterial()
         this.setModel()
+        this.onClick()
     }
-
-    // setTexture()
-    // {
-    //     this.textures = {}
-    //     this.textures.color = this.resources.items.matCapBeanTexture
-    // }
-    // setMaterial()
-    // {
-    //     this.material = new THREE.MeshMatcapMaterial()
-    //     this.material.matcap = this.textures.color
-    // }
-
 
     setTexture()
     {
@@ -60,9 +50,26 @@ export default class Globe
         let globeWater = this.model.children.find((child) => child.name === 'water')
         let globeEarth = this.model.children.find((child) => child.name === 'earth')
         
-        globeWater.matcapWaterMaterial = this.matcapWaterMaterial
-        globeEarth.matcapEarthMaterial = this.matcapEarthMaterial
+        globeWater.material = this.matcapWaterMaterial
+        globeEarth.material = this.matcapEarthMaterial
 
         this.scene.add(this.model)
     }
+
+    onClick()
+    {
+        const button = document.querySelector('a.btn-action')
+
+        button.addEventListener('click', () => {
+            gsap.to(
+                this.model.rotation, {
+                duration: 1.2,
+                ease: 'power2.inOut',
+                y: '-= 10.5deg'
+                }
+            )
+
+        })
+    }
+
 }

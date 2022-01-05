@@ -12,12 +12,14 @@ export default class Coffeebeans
 
         // Setup
 
+        this.beanArray = []
+
         this.resource = this.resources.items.coffeeBeansModel
 
         this.setTexture()
         this.setMaterial()
         this.setModel()
-        // this.setAnimation()
+        this.update()
 
     }
 
@@ -43,27 +45,24 @@ export default class Coffeebeans
         this.model.position.z = -1.5
         this.model.rotation.y = -Math.PI / 2;
 
-        let beanArray = []
-
         this.model.traverse((children) => {
             children.material = this.material
 
             if(children.name.includes('bean')) {
-                beanArray.push(children)
+                this.beanArray.push(children)
             }
         })
 
         this.scene.add(this.model)
-
     }
 
-    // setAnimation()
-    // {
-    //     for(let item of beanArray) {
-    //         item.rotation.x += this.delta * 0.2
-    //         item.rotation.y += this.delta * 0.23
-    //         item.rotation.z += this.delta * 0.36
-    //     }
-    // }
+    update()
+    {
+        for(let item of this.beanArray) {
+            item.rotation.x += this.delta * 0.0002
+            item.rotation.y += this.delta * 0.00023
+            item.rotation.z += this.delta * 0.00036
+        }
+    }
 
 }
