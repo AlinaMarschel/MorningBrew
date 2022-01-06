@@ -14,22 +14,22 @@ export default class Renderer
         this.setInstance()
     }
 
-    setInstance() 
+    setInstance()
     {
         this.instance = new THREE.WebGLRenderer({
             canvas: this.canvas,
             antialias: true,
             alpha: true
         })
-
-        this.instance.setSize(this.sizes.width, this.sizes.height)
-        this.instance.setPixelRatio(this.sizes.pixelRatio)
+        
         this.instance.outputEncoding = THREE.sRGBEncoding
+        this.resize()
     }
+
 
     resize()
     {
-        this.instance.setSize(this.sizes.height / this.sizes.height)
+        this.instance.setSize(this.sizes.width, this.sizes.height)
         this.instance.setPixelRatio(Math.min(this.sizes.pixelRatio, 2))
     }
 
