@@ -1,4 +1,6 @@
 import * as THREE from 'three'
+import Experience from '../Experience.js'
+import Globe from './Globe.js'
 
 export default class Coffeepin
 {
@@ -7,6 +9,26 @@ export default class Coffeepin
         this.experience = new Experience()
         this.scene = this.experience.scene
         this.resources = this.experience.resources
+        this.globeMaster = new Globe()
+        this.globe = this.globeMaster.model
+
+        this.radius = 0.5
+
+        this.brasilCord = {
+            lat: -12.717171,
+            lon: -43.867233
+        }
+
+        this.brasilSpherical = {
+            lat: THREE.Math.degToRad(90 - this.brasilCord.lat),
+            lon: THREE.Math.degToRad(this.brasilCord.lon),
+        }
+
+        this.brasilVector = new THREE.Vector3().setFromSphericalCoords(
+            this.radius + 0.05,
+            this.brasilSpherical.lat,
+            this.brasilSpherical.lon
+        );
 
         // Setup
         this.resource = this.resources.items.pinModel
@@ -15,6 +37,7 @@ export default class Coffeepin
         this.setMaterial()
         this.setModel()
     }
+
 
     setTexture()
     {
@@ -36,20 +59,21 @@ export default class Coffeepin
     
     setModel()
     {
-        this.viewportHeight = this.experience.sizes.height
 
         this.model = this.resource.scene
-        this.model.scale.set(0.4, 0.4, 0.4)
-        this.model.position.x = 3
-        this.model.position.y = -this.viewportHeight * 0.01
-        this.model.position.z = -3
-        this.model.rotation.y = 0.18;
+        this.model.scale.set(0.25, 0.25, 0.25)
+        this.model.rotation.y = 1.2
+        this.model.rotation.z = 1.5
+        this.model.position.set(this.brasilVector.x, this.brasilVector.y, this.brasilVector.z + 0.5)
 
+        
         this.model.traverse((child) => {
             child.material = this.material
         })
 
-        this.scene.add(this.model)
+        console.log(this.model)
+
+        this.globe.add(this.model)
     }
 
 }

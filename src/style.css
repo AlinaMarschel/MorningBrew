@@ -8,14 +8,6 @@
     box-sizing: border-box;
 }
 
-#brazil-product-page {
-    background-color: #013936;
-}
-
-#homepage-body {
-  background-color: #F8EADA;
-}
-
 *::before,
 *::after {
   box-sizing: border-box;
@@ -78,9 +70,8 @@ p {
 
 #landingpage {
   color: #013936;
-  height: 100vh;
-  background-color: transparent;
   z-index: 10;
+  overflow: hidden;
 }
 
 #landingpage #hero {

@@ -36,7 +36,6 @@ export default class Experience
         this.renderer = new Renderer()
         this.world = new World()
 
-
         // Sizes resize Event
         this.sizes.on('resize', () =>
         {

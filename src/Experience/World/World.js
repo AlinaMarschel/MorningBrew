@@ -1,10 +1,10 @@
 import * as THREE from 'three'
-import Experience from "../Experience";
-import Coffeebag from './Coffeebag';
-import Coffeebeans from './Coffeebeans';
-import Globe from './Globe';
-import GlobeLanding from './GlobeLanding';
-import Particle from './Particle';
+import Experience from "../Experience.js";
+import Coffeebag from './Coffeebag.js';
+import Coffeebeans from './Coffeebeans.js';
+import Coffeepin from './Coffeepin.js';
+import Globe from './Globe.js';
+import Particle from './Particle.js';
 
 
 export default class World 
@@ -14,6 +14,7 @@ export default class World
     {
         this.experience = new Experience()
         this.scene = this.experience.scene
+        this.sizes = this.experience.sizes
         this.resources = this.experience.resources
 
         // Wait for Resources
@@ -21,11 +22,25 @@ export default class World
         {
             this.coffeebag = new Coffeebag()
             this.coffeebeans = new Coffeebeans()
+            this.coffeePin = new Coffeepin()
             this.globe = new Globe()
-            this.globeLanding = new GlobeLanding()
             this.particles = new Particle()
             console.log('resources are ready')
         })
+
+        this.scrollY = window.scrollY
+        this.currentSection = 0
+
+        window.addEventListener('scroll', () => {
+            this.scrollY = window.scrollY
+            this.newSection = Math.round(this.scrollY / this.sizes.height)
+
+                if(this.newSection != this.currentSection) {
+                    this.currentSection = this.newSection
+                }
+        })
+
+        console.log(this.currentSection)
 
         this.update()
     }
