@@ -6,6 +6,12 @@ export default [
     },
 
     {
+        name: 'bakedPinTexture',
+        type: 'texture',
+        path: ['textures/pin_baked.jpg']
+    },
+
+    {
         name: 'matCapEarthTexture',
         type: 'texture',
         path: ['textures/matcaps/pink_matcap.png']
@@ -41,6 +47,12 @@ export default [
         name:'globeModel',
         type: 'gtlfModel',
         path: 'models/globe.glb'
+    },
+
+    {
+        name:'pinModel',
+        type: 'gtlfModel',
+        path: 'models/coffee_pin.glb'
     }
 
 ]

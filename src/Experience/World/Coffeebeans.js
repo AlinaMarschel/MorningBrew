@@ -38,10 +38,11 @@ export default class Coffeebeans
     setModel()
     {
         this.model = this.resource.scene
-
+        this.viewportHeight = this.experience.sizes.height
+        
         this.model.scale.set(0.5, 0.5, 0.5)
         this.model.position.x = 0.5
-        this.model.position.y = -1.3
+        this.model.position.y = -this.viewportHeight * 0.01
         this.model.position.z = -1.5
         this.model.rotation.y = -Math.PI / 2;
 

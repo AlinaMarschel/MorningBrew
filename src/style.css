@@ -76,11 +76,14 @@ p {
 *  HOMEPAGE STYLES
 **/
 
-#hero-section {
+#landingpage {
   color: #013936;
+  height: 100vh;
+  background-color: transparent;
+  z-index: 10;
 }
 
-#hero-section #hero {
+#landingpage #hero {
   padding-top: 1.5rem;
   text-align: right;
 }

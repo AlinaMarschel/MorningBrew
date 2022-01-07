@@ -26,7 +26,7 @@ module.exports = {
 
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, '../src/test.html'),
-            filename: 'src/test.html',
+            filename: 'test.html',
         }),
 
 

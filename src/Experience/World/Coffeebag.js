@@ -39,10 +39,12 @@ export default class Coffeebag
     
     setModel()
     {
+        this.viewportHeight = this.experience.sizes.height
+
         this.model = this.resource.scene
         this.model.scale.set(0.4, 0.4, 0.4)
         this.model.position.x = 3
-        this.model.position.y = -1
+        this.model.position.y = -this.viewportHeight * 0.01
         this.model.position.z = -3
         this.model.rotation.y = 0.18;
 
