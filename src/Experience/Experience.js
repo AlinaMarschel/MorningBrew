@@ -36,6 +36,8 @@ export default class Experience
         this.renderer = new Renderer()
         this.world = new World()
 
+        console.log(this.camera.instance)
+
         // Sizes resize Event
         this.sizes.on('resize', () =>
         {

@@ -18,6 +18,7 @@ export default class Globe
         this.setTexture()
         this.setMaterial()
         this.setModel()
+        this.setScroll()
         this.onClick()
     }
 
@@ -43,10 +44,10 @@ export default class Globe
     {
         this.model = this.resource.scene
 
-        this.model.scale.set(1.25, 1.25, 1.25)
-        this.model.rotation.y = 3.6
-        this.model.position.x = 3.2
-        this.model.position.y = -6
+        this.model.scale.set(2, 2, 2)
+        this.model.rotation.y = 0
+        this.model.position.x = 0
+        this.model.position.y = -1.8
 
         let globeWater = this.model.children.find((child) => child.name === 'water')
         let globeEarth = this.model.children.find((child) => child.name === 'earth')
@@ -55,6 +56,17 @@ export default class Globe
         globeEarth.material = this.matcapEarthMaterial
 
         this.scene.add(this.model)
+    }
+
+    setScroll()
+    {
+        this.scrollY = window.scrollY
+        this.currentSection = 0
+
+        window.addEventListener('scroll', () => {
+            this.scrollY = window.scrollY
+            this.newSection = Math.round(this.scrollY / this.sizes.height)
+        })
     }
 
     onClick()
@@ -71,6 +83,19 @@ export default class Globe
             )
 
         })
+    }
+
+    update()
+    {
+        // if(this.currentSection == 0) {
+        //     gsap.to(
+        //         this.model.rotation, {
+        //             ease: 'power2.inOut',
+        //             y: '-= .35deg'
+        //         }
+        //     )
+        //     console.log('Hi!')
+        // }
     }
 
 }

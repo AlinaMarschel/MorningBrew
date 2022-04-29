@@ -31,6 +31,7 @@ export default class Coffeepin
         );
 
         // Setup
+
         this.resource = this.resources.items.pinModel
 
         this.setTexture()
@@ -61,10 +62,10 @@ export default class Coffeepin
     {
 
         this.model = this.resource.scene
-        this.model.scale.set(0.25, 0.25, 0.25)
+        this.model.scale.set(0.08, 0.08, 0.08)
         this.model.rotation.y = 1.2
         this.model.rotation.z = 1.5
-        this.model.position.set(this.brasilVector.x, this.brasilVector.y, this.brasilVector.z + 0.5)
+        this.model.position.set(this.brasilVector.x, this.brasilVector.y, this.brasilVector.z + this.radius)
 
         
         this.model.traverse((child) => {

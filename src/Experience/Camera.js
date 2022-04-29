@@ -1,6 +1,7 @@
 import * as THREE from 'three'
 import Experience from "./Experience";
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import Globe from './World/Globe';
 
 export default class Camera 
 {
@@ -50,7 +51,9 @@ export default class Camera
 
         // Base Camera
         this.instance = new THREE.PerspectiveCamera(35, this.sizes.width / this.sizes.height, 0.1, 100)
-        this.instance.position.z = 6
+        this.instance.position.x = 0
+        this.instance.position.y = 0
+        this.instance.position.z = 5
         this.cameraGroup.add(this.instance)
     }
 
@@ -58,6 +61,12 @@ export default class Camera
     {
         this.controls = new OrbitControls(this.instance, this.canvas)
         this.controls.enableDamping = true
+
+        //this.controls.autoRotate = true 
+        //this.controls.autoRotateSpeed = 0.5
+
+        this.controls.enableZoom = false
+        this.controls.enablePan = false
     }
 
     resize()
@@ -69,6 +78,13 @@ export default class Camera
 
     animateCamera()
     {
+
+        if (this.currentSection = 0) {
+            this.controls.enableZoom = false
+            this.controls.enablePan = false
+        }
+
+        if (this.currentSection != 0) {
         this.instance.position.y = -this.scrollY / this.sizes.height * 4
 
         let parallaxX = this.cursor.x * 0.3
@@ -76,11 +92,13 @@ export default class Camera
 
         this.cameraGroup.position.x += (parallaxX - this.cameraGroup.position.x) * 0.01 * this.delta
         this.cameraGroup.position.y += (parallaxY - this.cameraGroup.position.y) * 0.01 * this.delta
+        }
+        
     }
 
     update()
     {
-        //this.controls.update()
+        this.controls.update()
         this.animateCamera()
     }
 }
