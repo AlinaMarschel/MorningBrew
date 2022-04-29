@@ -20,7 +20,7 @@ export default class World
         // Wait for Resources
         this.resources.on('ready', () =>
         {
-            //this.coffeebag = new Coffeebag()
+            this.coffeebag = new Coffeebag()
             this.coffeebeans = new Coffeebeans()
             this.coffeePin = new Coffeepin()
             this.globe = new Globe()
@@ -38,7 +38,6 @@ export default class World
                 if(this.newSection != this.currentSection) {
                     this.currentSection = this.newSection
                 }
-                console.log(this.currentSection)
         })
 
         

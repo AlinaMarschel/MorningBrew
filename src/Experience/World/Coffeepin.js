@@ -72,8 +72,6 @@ export default class Coffeepin
             child.material = this.material
         })
 
-        console.log(this.model)
-
         this.globe.add(this.model)
     }
 

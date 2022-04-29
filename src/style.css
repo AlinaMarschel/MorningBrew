@@ -1,11 +1,10 @@
-*
-{
-    margin: 0;
-    padding: 0;
-    font-family: gopher, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: gopher, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  box-sizing: border-box;
 }
 
 *::before,
@@ -13,13 +12,16 @@
   box-sizing: border-box;
 }
 
-.webgl
-{
-    position: fixed;
-    top: 0;
-    left: 0;
-    outline: none;
-    z-index: 1;
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
+  z-index: -1;
+}
+
+body {
+  overflow: hidden;
 }
 
 
@@ -28,8 +30,8 @@
 **/
 
 @font-face {
-    font-family: 'BNBrickHouse';
-    src: url("/static/fonts/BNBrickHouse.otf") format("opentype");
+  font-family: 'BNBrickHouse';
+  src: url("/static/fonts/BNBrickHouse.otf") format("opentype");
 }
 
 h1 {
@@ -54,34 +56,45 @@ p {
   width: 15rem;
 }
 
-.section
-{
-    height: 100vh;
-    position: relative;
-    font-size: 7vmin;
-    padding-left: 10%;
-    padding-right: 10%;
+.section {
+  height: 100vh;
+  position: relative;
+  font-size: 7vmin;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 
 /**
 *  HOMEPAGE STYLES
 **/
-
 #landingpage {
   color: #013936;
   z-index: 10;
-  height: 100vh;
+  height: 100%;
+  position: absolute;
+  width: 100%;
   pointer-events: none;
   overflow: hidden;
+  left: 0;
+  top: 0;
+  transition: all ease-in-out 1s;
 }
+
+#scroll-container {
+  overflow-y: scroll;
+  max-height: 100% !important;
+  position: absolute;
+  width: 100%;
+  left: 200%;
+  transition: all ease-in-out 1s;
+}
+
 
 #landingpage #hero {
   padding-top: 1.5rem;
   text-align: right;
 }
-
-
 
 
 /**
@@ -99,8 +112,8 @@ p {
 
 #support h2,
 #shop h2 {
-    font-size: 4.2rem;
-    font-family: 'BNBrickHouse';
+  font-size: 4.2rem;
+  font-family: 'BNBrickHouse';
 }
 
 
@@ -115,6 +128,7 @@ p {
   text-transform: uppercase;
   transition: ease-in-out .25s;
   text-decoration: none;
+  pointer-events: all;
 }
 
 .btn:hover {
@@ -122,19 +136,20 @@ p {
 }
 
 
+
 #product-section {
-    display: block;
-    color: #E3C29E;
+  display: block;
+  color: #E3C29E;
 }
 
 #product-section h2 {
-    font-family: gopher, sans-serif;
+  font-family: gopher, sans-serif;
 }
 
 
 
 #brazil-product {
-    margin-top: 2em;
+  margin-top: 2em;
 }
 
 /**
@@ -142,22 +157,22 @@ p {
 **/
 
 #support {
-    padding-top: 3rem;
-    width: 66%;
-    color: #E3C29E;
+  padding-top: 3rem;
+  width: 66%;
+  color: #E3C29E;
 }
 
 #support h3 {
-    font-size: 2rem;
-    font-weight: bold;
-    padding: 2rem 0;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 2rem 0;
 }
 
 #support p {
-    font-size: 1rem;
-    font-weight: normal;
-    line-height: 2;
-    padding-top: 1rem;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 2;
+  padding-top: 1rem;
 }
 
 
@@ -166,18 +181,18 @@ p {
 **/
 
 #shop {
-    background-color: #F8EADA;
-    padding-top: 1em;
-    padding-bottom: 1em;
+  background-color: #F8EADA;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 #shop h2 {
-    color: #013936;
+  color: #013936;
 }
 
 #section-headline {
-    display: block;
-    margin-bottom: 1.8rem;
+  display: block;
+  margin-bottom: 1.8rem;
 }
 
 #explore {
@@ -269,16 +284,19 @@ img {
 }
 
 .card__image--flowers {
-    background-image: url(/static/img/brazil_blend_800x600.jpg);
+  background-image: url(/static/img/brazil_blend_800x600.jpg);
 }
+
 .card__image--river {
-    background-image: url(/static/img/brazil_blend_800x600.jpg);
+  background-image: url(/static/img/brazil_blend_800x600.jpg);
 }
+
 .card__image--record {
-    background-image: url(/static/img/brazil_blend_800x600.jpg);
+  background-image: url(/static/img/brazil_blend_800x600.jpg);
 }
+
 .card__image--fence {
-    background-image: url(/static/img/brazil_blend_800x600.jpg);
+  background-image: url(/static/img/brazil_blend_800x600.jpg);
 }
 
 .card__title {
@@ -298,12 +316,12 @@ img {
 }
 
 .card_price {
-    font-weight: bold;
-    font-size: 1.25rem;
+  font-weight: bold;
+  font-size: 1.25rem;
 }
 
 .card_product_weight {
-    font-weight: lighter;
+  font-weight: lighter;
 }
 
 .card__btn {
@@ -329,32 +347,31 @@ img {
   align-content: space-between;
 }
 
-#footer > div > h3 {
+#footer>div>h3 {
   font-family: 'BNBrickHouse';
   font-size: 2rem;
   margin-bottom: 1rem;
   color: #013936;
 }
 
-#footer > div > p {
+#footer>div>p {
   color: #013936;
   line-height: 2.2;
 }
 
-#footer > div > p > a {
+#footer>div>p>a {
   text-decoration: none;
   font-weight: bold;
   color: #013936;
 }
 
-#footer > div:nth-child(3) {
+#footer>div:nth-child(3) {
   position: relative;
 }
 
-#footer > div:nth-child(3) img{
+#footer>div:nth-child(3) img {
   width: 5rem;
   position: absolute;
   right: 0;
   bottom: 0;
 }
-

@@ -6,6 +6,7 @@ import Renderer from './Renderer.js'
 import World from './World/World.js'
 import Resources from './Utils/Resources.js'
 import sources from './sources.js' 
+import Transition from './Transition.js'
 
 
 let instance = null
@@ -35,8 +36,7 @@ export default class Experience
         this.camera = new Camera()
         this.renderer = new Renderer()
         this.world = new World()
-
-        console.log(this.camera.instance)
+        this.transition = new Transition()
 
         // Sizes resize Event
         this.sizes.on('resize', () =>
@@ -53,7 +53,7 @@ export default class Experience
 
     resize()
     {
-        //this.camera.resize()
+        this.camera.resize()
         this.renderer.resize()
     }
 

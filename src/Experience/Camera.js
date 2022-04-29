@@ -14,7 +14,7 @@ export default class Camera
         this.delta = this.experience.time.delta
 
         this.setInstance()
-        this.setOrbitControls()
+        //this.setOrbitControls()
         this.resize()
         this.setCursor()
         this.setScroll()
@@ -98,7 +98,7 @@ export default class Camera
 
     update()
     {
-        this.controls.update()
+        //this.controls.update()
         this.animateCamera()
     }
 }

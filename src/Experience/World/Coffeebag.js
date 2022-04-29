@@ -13,7 +13,7 @@ export default class Coffeebag
         // Setup
         this.resource = this.resources.items.coffeeBagModel
 
-        this.setTexture()
+        //this.setTexture()
         this.setMaterial()
         this.setModel()
     }    
@@ -32,26 +32,34 @@ export default class Coffeebag
     setMaterial()
     {
         this.material =  new THREE.MeshBasicMaterial({
-                map: this.textures.color
+            color: 0xc10000
+            //map: this.textures.color
         })
     }
 
     
     setModel()
     {
-        this.viewportHeight = this.experience.sizes.height
+        this.geometry = new THREE.BoxGeometry(1, 1, 1)
 
-        this.model = this.resource.scene
-        this.model.scale.set(0.4, 0.4, 0.4)
-        this.model.position.x = 3
-        this.model.position.y = -this.viewportHeight * 0.01
-        this.model.position.z = -3
-        this.model.rotation.y = 0.18;
+        this.model = new THREE.Mesh(this.geometry, this.material)
 
-        this.model.traverse((child) => {
-            child.material = this.material
-        })
+        this.model.position.x = 40
 
         this.scene.add(this.model)
+        // this.viewportHeight = this.experience.sizes.height
+
+        // this.model = this.resource.scene
+        // this.model.scale.set(0.4, 0.4, 0.4)
+        // this.model.position.x = 3
+        // this.model.position.y = 0
+        // this.model.position.z = -3
+        // this.model.rotation.y = 0.18;
+
+        // this.model.traverse((child) => {
+        //     child.material = this.material
+        // })
+
+        // this.scene.add(this.model)
     }
 }
