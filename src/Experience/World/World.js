@@ -4,6 +4,7 @@ import Coffeebag from './Coffeebag.js';
 import Coffeebeans from './Coffeebeans.js';
 import Coffeepin from './Coffeepin.js';
 import Globe from './Globe.js';
+import Jungle from './Jungle.js';
 import Particle from './Particle.js';
 
 
@@ -20,11 +21,12 @@ export default class World
         // Wait for Resources
         this.resources.on('ready', () =>
         {
-            this.coffeebag = new Coffeebag()
-            this.coffeebeans = new Coffeebeans()
-            this.coffeePin = new Coffeepin()
-            this.globe = new Globe()
+            //this.coffeebag = new Coffeebag()
+            //this.coffeebeans = new Coffeebeans()
+            //this.coffeePin = new Coffeepin()
+            //this.globe = new Globe()
             this.particles = new Particle()
+            this.jungle = new Jungle()
             console.log('resources are ready')
         })
 
@@ -40,8 +42,6 @@ export default class World
                 }
         })
 
-        
-
         this.update()
     }
 
@@ -52,10 +52,10 @@ export default class World
             this.coffeebeans.update()
         }
 
-        if(this.globe) 
-        {
-            this.globe.update()
-        }
+        // if(this.globe) 
+        // {
+        //     this.globe.update()
+        // }
     }
 
 }

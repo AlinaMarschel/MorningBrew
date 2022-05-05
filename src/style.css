@@ -18,6 +18,8 @@
   left: 0;
   outline: none;
   z-index: -1;
+  background: rgb(248,234,218);
+  background: radial-gradient(circle, rgba(248,234,218,1) 0%, rgba(227,194,158,1) 100%);
 }
 
 body {

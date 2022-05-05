@@ -29,6 +29,20 @@ export default [
         path: ['textures/matcaps/bean_matcap01.png']
     },
 
+    // Jungle Sprites
+
+    {
+        name: 'jungleBackground',
+        type: 'texture',
+        path: ['textures/jungle_transition/background-sprite.png']
+    },
+
+    {
+        name: 'plant01',
+        type: 'texture',
+        path: ['textures/jungle_transition/plant01.png']
+    },
+
     // 3D Models
 
     {
@@ -44,15 +58,17 @@ export default [
     },
 
     {
-        name:'globeModel',
+        name: 'globeModel',
         type: 'gtlfModel',
         path: 'models/globe.glb'
     },
 
     {
-        name:'pinModel',
+        name: 'pinModel',
         type: 'gtlfModel',
         path: 'models/coffee_pin.glb'
-    }
+    },
+
+
 
 ]

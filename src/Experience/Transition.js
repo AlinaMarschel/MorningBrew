@@ -4,7 +4,7 @@ import gsap from 'gsap'
 export default class Transition {
 
     parameters = {
-        duration: 1,
+        duration: 3,
     }
 
     domElements = {
