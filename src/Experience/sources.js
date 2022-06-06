@@ -38,10 +38,53 @@ export default [
     },
 
     {
+        name: 'jungleHillBackground',
+        type: 'texture',
+        path: ['textures/jungle_transition/background_hill_01.png']
+    },
+
+    {
+        name: 'jungleHillBackground02',
+        type: 'texture',
+        path: ['textures/jungle_transition/background_hill_02.png']
+    },
+
+    {
+        name: 'bgtree01',
+        type: 'texture',
+        path: ['textures/jungle_transition/bg_tree01.png']
+    },
+
+    {
+        name: 'bgtree02',
+        type: 'texture',
+        path: ['textures/jungle_transition/bg_tree02.png']
+    },
+
+    {
         name: 'plant01',
         type: 'texture',
         path: ['textures/jungle_transition/plant01.png']
     },
+
+    {
+        name: 'plant02',
+        type: 'texture',
+        path: ['textures/jungle_transition/plant02.png']
+    },
+
+    {
+        name: 'plant03',
+        type: 'texture',
+        path: ['textures/jungle_transition/plant03.png']
+    },
+
+    {
+        name: 'lianen01',
+        type: 'texture',
+        path: ['textures/jungle_transition/lianen01.png']
+    },
+
 
     // 3D Models
 
