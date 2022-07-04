@@ -85,6 +85,12 @@ export default [
         path: ['textures/jungle_transition/lianen01.png']
     },
 
+    {
+        name: 'lianen02',
+        type: 'texture',
+        path: ['textures/jungle_transition/lianen02.png']
+    },
+
 
     // 3D Models
 

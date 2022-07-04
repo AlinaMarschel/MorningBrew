@@ -99,6 +99,24 @@ export default class Jungle {
         })
         this.lianen01 = new THREE.Sprite(this.lianen01Material)
 
+        // Lianen 02
+        this.lianen02Texture = this.resources.items.lianen02
+        this.lianen02Texture.encoding = THREE.sRGBEncoding
+        this.lianen02Material = new THREE.SpriteMaterial({
+            map: this.lianen02Texture,
+        })
+        this.lianen02 = new THREE.Sprite(this.lianen02Material)
+
+
+        // Lianen 03
+        this.lianen03Texture = this.resources.items.lianen02
+        this.lianen03Texture.encoding = THREE.sRGBEncoding
+        this.lianen03Material = new THREE.SpriteMaterial({
+            map: this.lianen03Texture,
+        })
+        this.lianen03 = new THREE.Sprite(this.lianen03Material)
+
+
         //Positioning
         this.backgroundSprite.scale.set(20, 10, 0)
         this.backgroundSprite.position.set(0, 0, -10)
@@ -124,10 +142,14 @@ export default class Jungle {
         this.plant03.scale.set(1.5, 1.5, 0)
         this.plant03.position.set(1.35, -0.4, 2)
 
-        this.lianen01.scale.set(7, 7, 0)
-        this.lianen01.position.set(0, -1.25, 0)
+        this.lianen01.scale.set(6, 6, 0)
+        this.lianen01.position.set(-0.05, -1.0, 0)
 
-        console.log(this.plant01)
+        this.lianen02.scale.set(4.5, 4.5, 0)
+        this.lianen02.position.set(-0.5, 0, 0)
+
+        this.lianen03.scale.set(4.5, 4.5, 0)
+        this.lianen03.position.set(4, 1.2, 0)
 
         this.scene.add
             (
@@ -139,7 +161,9 @@ export default class Jungle {
                 this.plant01,
                 this.plant02,
                 this.plant03,
-                this.lianen01
+                this.lianen01,
+                this.lianen02,
+                this.lianen03
             );
     }
 }
