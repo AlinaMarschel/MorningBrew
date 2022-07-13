@@ -118,14 +118,14 @@ export default class Jungle {
 
 
         //Positioning
-        this.backgroundSprite.scale.set(20, 10, 0)
+        this.backgroundSprite.scale.set(18, 18, 0)
         this.backgroundSprite.position.set(0, 0, -10)
 
         this.backgroundHillSprite.scale.set(7, 7, 0)
         this.backgroundHillSprite.position.set(0.1, 1.5, 0)
 
         this.backgroundHillSprite02.scale.set(7, 7, 0)
-        this.backgroundHillSprite02.position.set(0.5, 1, 0)
+        this.backgroundHillSprite02.position.set(0, 1, 0)
 
         this.backgroundTree01.scale.set(4, 4, 0)
         this.backgroundTree01.position.set(-1.45, 0, 0)
@@ -142,8 +142,8 @@ export default class Jungle {
         this.plant03.scale.set(1.5, 1.5, 0)
         this.plant03.position.set(1.35, -0.4, 2)
 
-        this.lianen01.scale.set(6, 6, 0)
-        this.lianen01.position.set(-0.05, -1.0, 0)
+        this.lianen01.scale.set(8, 8, 0)
+        this.lianen01.position.set(-0.05, -1.45, 0)
 
         this.lianen02.scale.set(4.5, 4.5, 0)
         this.lianen02.position.set(-0.5, 0, 0)

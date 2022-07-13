@@ -34,7 +34,7 @@ export default [
     {
         name: 'jungleBackground',
         type: 'texture',
-        path: ['textures/jungle_transition/background-sprite.png']
+        path: ['textures/jungle_transition/bg.png']
     },
 
     {
