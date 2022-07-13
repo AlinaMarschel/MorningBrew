@@ -8,11 +8,13 @@ export default class Jungle {
     constructor() {
 
         this.experience = new Experience()
+        this.debug = this.experience.debug
         this.scene = this.experience.scene
         this.resources = this.experience.resources
 
         //setTexture()
         this.setSprite()
+        this.debugJungle()
 
     }
 
@@ -166,4 +168,14 @@ export default class Jungle {
                 this.lianen03
             );
     }
+
+    debugJungle() {
+        // Debug
+
+        this.debug.ui.add(this.plant02.position, 'x', -2, 2, 0.01).name('plant02 // x-pos:')
+        this.debug.ui.add(this.plant02.position, 'y', -2, 2, 0.01,).name('plant02 // y-pos:')
+        console.log('Hi')
+    }
+
+
 }
