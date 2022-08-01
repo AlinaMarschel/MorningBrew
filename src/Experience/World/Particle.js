@@ -39,7 +39,7 @@ export default class Particle
         this.particlesGeometry.setAttribute('position', new THREE.BufferAttribute(this.positions, 3))
 
         this.particles = new THREE.Points(this.particlesGeometry, this.particlesMaterial)
-        this.particles.position.y = -2.8
+        this.particles.position.y = 0
         this.scene.add(this.particles)
 
     }

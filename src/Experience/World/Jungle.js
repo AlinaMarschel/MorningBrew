@@ -19,7 +19,6 @@ export default class Jungle {
     }
 
     setSprite() {
-
         // Background Color
         this.backgroundTexture = this.resources.items.jungleBackground
         this.backgroundTexture.encoding = THREE.sRGBEncoding
@@ -121,37 +120,37 @@ export default class Jungle {
 
         //Positioning
         this.backgroundSprite.scale.set(18, 18, 0)
-        this.backgroundSprite.position.set(0, 0, -10)
+        this.backgroundSprite.position.set(18.4, 0, -10)
 
         this.backgroundHillSprite.scale.set(7, 7, 0)
-        this.backgroundHillSprite.position.set(0.1, 1.5, 0)
+        this.backgroundHillSprite.position.set(22.1, 1.5, 0)
 
         this.backgroundHillSprite02.scale.set(7, 7, 0)
-        this.backgroundHillSprite02.position.set(0, 1, 0)
+        this.backgroundHillSprite02.position.set(14.34, 0.62, 0)
 
         this.backgroundTree01.scale.set(4, 4, 0)
-        this.backgroundTree01.position.set(-1.45, 0, 0)
+        this.backgroundTree01.position.set(16.55, 0, 0)
 
         this.backgroundTree02.scale.set(4, 4, 0)
-        this.backgroundTree02.position.set(1.25, 0, 0)
+        this.backgroundTree02.position.set(19.25, 0, 0)
 
         this.plant01.scale.set(1.5, 1.5, 0)
-        this.plant01.position.set(1.0, -0.8, 1)
+        this.plant01.position.set(19.0, -0.8, 1)
 
         this.plant02.scale.set(1.5, 1.5, 0)
-        this.plant02.position.set(-1.6, -0.3, 2)
+        this.plant02.position.set(16.4, -0.3, 2)
 
         this.plant03.scale.set(1.5, 1.5, 0)
-        this.plant03.position.set(1.35, -0.4, 2)
+        this.plant03.position.set(19.35, -0.4, 2)
 
         this.lianen01.scale.set(8, 8, 0)
-        this.lianen01.position.set(-0.05, -1.45, 0)
+        this.lianen01.position.set(17.05, -1.45, 0)
 
         this.lianen02.scale.set(4.5, 4.5, 0)
-        this.lianen02.position.set(-0.5, 0, 0)
+        this.lianen02.position.set(17.05, 0, 0)
 
         this.lianen03.scale.set(4.5, 4.5, 0)
-        this.lianen03.position.set(4, 1.2, 0)
+        this.lianen03.position.set(22, 1.2, 0)
 
         this.scene.add
             (
@@ -169,12 +168,46 @@ export default class Jungle {
             );
     }
 
-    debugJungle() {
-        // Debug
+    // Debug
+    debugJungle() 
+    {
+        // Background
+        this.debug.ui.add(this.backgroundSprite.position, 'x', -4, 30, 0.01).name('bg // x-pos:')
+        this.debug.ui.add(this.backgroundSprite.position, 'y', -4, 30, 0.01,).name('bg // y-pos:')
 
-        this.debug.ui.add(this.plant02.position, 'x', -2, 2, 0.01).name('plant02 // x-pos:')
-        this.debug.ui.add(this.plant02.position, 'y', -2, 2, 0.01,).name('plant02 // y-pos:')
-        console.log('Hi')
+        this.debug.ui.add(this.backgroundHillSprite.position, 'x', -4, 30, 0.01).name('bgHill01 // x-pos:')
+        this.debug.ui.add(this.backgroundHillSprite.position, 'y', -4, 30, 0.01,).name('bgHill01 // y-pos:')
+
+        this.debug.ui.add(this.backgroundHillSprite02.position, 'x', -4, 30, 0.01).name('bgHill02 // x-pos:')
+        this.debug.ui.add(this.backgroundHillSprite02.position, 'y', -4, 30, 0.01,).name('bgHill02 // y-pos:')
+
+        // Trees
+        this.debug.ui.add(this.backgroundTree01.position, 'x', -4, 30, 0.01).name('bgTree01 // x-pos:')
+        this.debug.ui.add(this.backgroundTree01.position, 'y', -4, 30, 0.01,).name('bgTree01 // y-pos:')
+
+        this.debug.ui.add(this.backgroundTree02.position, 'x', -4, 30, 0.01).name('bgTree02 // x-pos:')
+        this.debug.ui.add(this.backgroundTree02.position, 'y', -4, 30, 0.01,).name('bgTree02 // y-pos:')
+
+        // Plants
+        this.debug.ui.add(this.plant01.position, 'x', -4, 30, 0.01).name('plant01 // x-pos:')
+        this.debug.ui.add(this.plant01.position, 'y', -4, 30, 0.01,).name('plant01 // y-pos:')
+
+        this.debug.ui.add(this.plant02.position, 'x', -4, 30, 0.01).name('plant02 // x-pos:')
+        this.debug.ui.add(this.plant02.position, 'y', -4, 30, 0.01,).name('plant02 // y-pos:')
+
+        this.debug.ui.add(this.plant03.position, 'x', -4, 30, 0.01).name('plant03 // x-pos:')
+        this.debug.ui.add(this.plant03.position, 'y', -4, 30, 0.01,).name('plant03 // y-pos:')
+
+        // Lianen
+        this.debug.ui.add(this.lianen01.position, 'x', -4, 30, 0.01).name('lianen01 // x-pos:')
+        this.debug.ui.add(this.lianen01.position, 'y', -4, 30, 0.01,).name('lianen01 // y-pos:')
+
+        this.debug.ui.add(this.lianen02.position, 'x', -4, 30, 0.01).name('lianen02 // x-pos:')
+        this.debug.ui.add(this.lianen02.position, 'y', -4, 30, 0.01,).name('lianen02 // y-pos:')
+
+        this.debug.ui.add(this.lianen03.position, 'x', -4, 30, 0.01).name('lianen03 // x-pos:')
+        this.debug.ui.add(this.lianen03.position, 'y', -4, 30, 0.01,).name('lianen03 // y-pos:')
+
     }
 
 

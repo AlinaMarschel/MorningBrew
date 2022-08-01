@@ -4,7 +4,7 @@ import gsap from 'gsap'
 export default class Transition {
 
     parameters = {
-        duration: 3,
+        duration: 8,
     }
 
     domElements = {
@@ -34,7 +34,8 @@ export default class Transition {
         gsap.to(
             this.camera.position, {
             duration: this.parameters.duration,
-            ease: 'power2.inOut',
+            // ease: 'power2.inOut',
+            ease:'slow (0.5, 0.4, false)',
             x: 40
         })
 

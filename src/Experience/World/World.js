@@ -24,7 +24,7 @@ export default class World
             //this.coffeebag = new Coffeebag()
             //this.coffeebeans = new Coffeebeans()
             //this.coffeePin = new Coffeepin()
-            //this.globe = new Globe()
+            this.globe = new Globe()
             this.particles = new Particle()
             this.jungle = new Jungle()
             console.log('resources are ready')

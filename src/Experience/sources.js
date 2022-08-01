@@ -40,7 +40,7 @@ export default [
     {
         name: 'jungleHillBackground',
         type: 'texture',
-        path: ['textures/jungle_transition/background_hill_01.png']
+        path: ['textures/jungle_transition/background_hill_03.png']
     },
 
     {
