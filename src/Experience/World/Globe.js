@@ -67,6 +67,7 @@ export default class Globe {
         globeWater.material = this.matcapWaterMaterial
         globeEarth.material = this.matcapEarthMaterial
 
+        console.log('hello?')
         this.scene.add(this.model)
     }
 

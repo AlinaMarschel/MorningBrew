@@ -52,10 +52,10 @@ export default class World
             this.coffeebeans.update()
         }
 
-        // if(this.globe) 
-        // {
-        //     this.globe.update()
-        // }
+        if(this.globe) 
+        {
+            this.globe.update()
+        }
     }
 
 }

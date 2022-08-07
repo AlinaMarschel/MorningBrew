@@ -14,7 +14,7 @@ export default class Jungle {
 
         //setTexture()
         this.setSprite()
-        this.debugJungle()
+        //this.debugJungle()
 
     }
 
@@ -169,46 +169,46 @@ export default class Jungle {
     }
 
     // Debug
-    debugJungle() 
-    {
-        // Background
-        this.debug.ui.add(this.backgroundSprite.position, 'x', -4, 30, 0.01).name('bg // x-pos:')
-        this.debug.ui.add(this.backgroundSprite.position, 'y', -4, 30, 0.01,).name('bg // y-pos:')
+    // debugJungle() 
+    // {
+    //     Background
+    //     this.debug.ui.add(this.backgroundSprite.position, 'x', -4, 30, 0.01).name('bg // x-pos:')
+    //     this.debug.ui.add(this.backgroundSprite.position, 'y', -4, 30, 0.01,).name('bg // y-pos:')
 
-        this.debug.ui.add(this.backgroundHillSprite.position, 'x', -4, 30, 0.01).name('bgHill01 // x-pos:')
-        this.debug.ui.add(this.backgroundHillSprite.position, 'y', -4, 30, 0.01,).name('bgHill01 // y-pos:')
+    //     this.debug.ui.add(this.backgroundHillSprite.position, 'x', -4, 30, 0.01).name('bgHill01 // x-pos:')
+    //     this.debug.ui.add(this.backgroundHillSprite.position, 'y', -4, 30, 0.01,).name('bgHill01 // y-pos:')
 
-        this.debug.ui.add(this.backgroundHillSprite02.position, 'x', -4, 30, 0.01).name('bgHill02 // x-pos:')
-        this.debug.ui.add(this.backgroundHillSprite02.position, 'y', -4, 30, 0.01,).name('bgHill02 // y-pos:')
+    //     this.debug.ui.add(this.backgroundHillSprite02.position, 'x', -4, 30, 0.01).name('bgHill02 // x-pos:')
+    //     this.debug.ui.add(this.backgroundHillSprite02.position, 'y', -4, 30, 0.01,).name('bgHill02 // y-pos:')
 
-        // Trees
-        this.debug.ui.add(this.backgroundTree01.position, 'x', -4, 30, 0.01).name('bgTree01 // x-pos:')
-        this.debug.ui.add(this.backgroundTree01.position, 'y', -4, 30, 0.01,).name('bgTree01 // y-pos:')
+    //     Trees
+    //     this.debug.ui.add(this.backgroundTree01.position, 'x', -4, 30, 0.01).name('bgTree01 // x-pos:')
+    //     this.debug.ui.add(this.backgroundTree01.position, 'y', -4, 30, 0.01,).name('bgTree01 // y-pos:')
 
-        this.debug.ui.add(this.backgroundTree02.position, 'x', -4, 30, 0.01).name('bgTree02 // x-pos:')
-        this.debug.ui.add(this.backgroundTree02.position, 'y', -4, 30, 0.01,).name('bgTree02 // y-pos:')
+    //     this.debug.ui.add(this.backgroundTree02.position, 'x', -4, 30, 0.01).name('bgTree02 // x-pos:')
+    //     this.debug.ui.add(this.backgroundTree02.position, 'y', -4, 30, 0.01,).name('bgTree02 // y-pos:')
 
-        // Plants
-        this.debug.ui.add(this.plant01.position, 'x', -4, 30, 0.01).name('plant01 // x-pos:')
-        this.debug.ui.add(this.plant01.position, 'y', -4, 30, 0.01,).name('plant01 // y-pos:')
+    //     Plants
+    //     this.debug.ui.add(this.plant01.position, 'x', -4, 30, 0.01).name('plant01 // x-pos:')
+    //     this.debug.ui.add(this.plant01.position, 'y', -4, 30, 0.01,).name('plant01 // y-pos:')
 
-        this.debug.ui.add(this.plant02.position, 'x', -4, 30, 0.01).name('plant02 // x-pos:')
-        this.debug.ui.add(this.plant02.position, 'y', -4, 30, 0.01,).name('plant02 // y-pos:')
+    //     this.debug.ui.add(this.plant02.position, 'x', -4, 30, 0.01).name('plant02 // x-pos:')
+    //     this.debug.ui.add(this.plant02.position, 'y', -4, 30, 0.01,).name('plant02 // y-pos:')
 
-        this.debug.ui.add(this.plant03.position, 'x', -4, 30, 0.01).name('plant03 // x-pos:')
-        this.debug.ui.add(this.plant03.position, 'y', -4, 30, 0.01,).name('plant03 // y-pos:')
+    //     this.debug.ui.add(this.plant03.position, 'x', -4, 30, 0.01).name('plant03 // x-pos:')
+    //     this.debug.ui.add(this.plant03.position, 'y', -4, 30, 0.01,).name('plant03 // y-pos:')
 
-        // Lianen
-        this.debug.ui.add(this.lianen01.position, 'x', -4, 30, 0.01).name('lianen01 // x-pos:')
-        this.debug.ui.add(this.lianen01.position, 'y', -4, 30, 0.01,).name('lianen01 // y-pos:')
+    //     Lianen
+    //     this.debug.ui.add(this.lianen01.position, 'x', -4, 30, 0.01).name('lianen01 // x-pos:')
+    //     this.debug.ui.add(this.lianen01.position, 'y', -4, 30, 0.01,).name('lianen01 // y-pos:')
 
-        this.debug.ui.add(this.lianen02.position, 'x', -4, 30, 0.01).name('lianen02 // x-pos:')
-        this.debug.ui.add(this.lianen02.position, 'y', -4, 30, 0.01,).name('lianen02 // y-pos:')
+    //     this.debug.ui.add(this.lianen02.position, 'x', -4, 30, 0.01).name('lianen02 // x-pos:')
+    //     this.debug.ui.add(this.lianen02.position, 'y', -4, 30, 0.01,).name('lianen02 // y-pos:')
 
-        this.debug.ui.add(this.lianen03.position, 'x', -4, 30, 0.01).name('lianen03 // x-pos:')
-        this.debug.ui.add(this.lianen03.position, 'y', -4, 30, 0.01,).name('lianen03 // y-pos:')
+    //     this.debug.ui.add(this.lianen03.position, 'x', -4, 30, 0.01).name('lianen03 // x-pos:')
+    //     this.debug.ui.add(this.lianen03.position, 'y', -4, 30, 0.01,).name('lianen03 // y-pos:')
 
-    }
+    // }
 
 
 }
