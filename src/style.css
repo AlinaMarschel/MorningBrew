@@ -163,8 +163,12 @@ p {
 *  Support Section Styles
 **/
 
+#support-wrapper {
+  background-color: #013936;
+}
+
 #support {
-  padding-top: 3rem;
+  padding-top: 10rem;;
   width: 66%;
   color: #E3C29E;
 }
