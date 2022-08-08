@@ -2,7 +2,6 @@ import * as THREE from 'three'
 import Experience from "../Experience";
 import { gsap, Power4 } from 'gsap'
 
-
 export default class Globe {
     constructor() {
         this.experience = new Experience()
@@ -16,8 +15,6 @@ export default class Globe {
         this.setMaterial()
         this.setModel()
         // this.setScroll()
-
-
         // this.onGrab()
 
         this.targetRotationX = 0.5
@@ -35,12 +32,11 @@ export default class Globe {
         this.windowHalfX = window.innerWidth / 2
         this.windowHalfY = window.innerHeight / 2
 
-        this.slowingFactor = 0.25
+        this.slowingFactor = 0.005
 
     }
 
-    setModel() 
-    {
+    setModel() {
         this.model = this.resource.scene
 
         this.model.scale.set(2, 2, 2)
@@ -73,8 +69,7 @@ export default class Globe {
         this.matcapEarthMaterial.matcap = this.textures.matcapEarth
     }
 
-    onDocumentMouseDown (event) 
-    {
+    onDocumentMouseDown(event) {
         event.preventDefault()
 
         document.addEventListener('mousemove', this.onDocumentMouseMove, false)
@@ -90,53 +85,29 @@ export default class Globe {
         console.log('onDocumentDown')
     }
 
-    onDocumentMouseMove (event) 
-    {
+    onDocumentMouseMove(event) {
 
         this.mouseX = event.clientX - this.windowHalfX
-        this.targetRotationX = ( this.mouseX - this.mouseXOnMouseDown ) * 0.00025
+        this.targetRotationX = (this.mouseX - this.mouseXOnMouseDown) * 0.00025
 
         this.mouseY = event.clientY - this.windowHalfY
-        this.targetRotationY = ( this.mouseY - this.mouseYOnMouseDown ) * 0.00025
-
-        console.log('onDocumentMouseMove')
+        this.targetRotationY = (this.mouseY - this.mouseYOnMouseDown) * 0.00025
 
     }
 
-    onDocumentMouseUp (event) 
-    {
+    onDocumentMouseUp(event) {
         document.removeEventListener('mousemove', this.onDocumentMouseMove, false)
         document.removeEventListener('mouseup', this.onDocumentMouseUp, false)
         document.removeEventListener('mouseout', this.onDocumentMouseOut, false)
     }
 
-    onDocumentMouseOut (event)
-    {
+    onDocumentMouseOut(event) {
         document.removeEventListener('mousemove', this.onDocumentMouseMove, false)
         document.removeEventListener('mouseup', this.onDocumentMouseUp, false)
         document.removeEventListener('mouseout', this.onDocumentMouseOut, false)
     }
 
-    rotateAroundObjectAxis(object, axis, radians)
-    {
-        this.rotationMatrix = new THREE.Matrix4()
 
-        this.rotationMatrix.makeRotationAxis(axis.normalize(), radians)
-        object.matrix.multiply(this.rotationMatrix)
-        object.rotation.setFromRotationMatrix(object.matrix)
-    }
-
-    rotateAroundWorldAxis (object, axis, radians) 
-    {
-
-        this.rotationMatrix = new THREE.Matrix4()
-
-        this.rotationMatrix.makeRotationAxis(axis.normalize(), radians)
-        this.rotationMatrix.multiply(object.matrix)
-        object.matrix = this.rotationMatrix
-        object.rotation.setFromRotationMatrix(object.matrix)
-
-    }
 
     // onGrab() {
     //     document.addEventListener('mousedown', (event) => {
@@ -185,12 +156,7 @@ export default class Globe {
     // }
 
     update() {
-
-        this.rotateAroundWorldAxis(this.model, new THREE.Vector3(0, 1, 0), this.targetRotationX);
-        this.rotateAroundWorldAxis(this.model, new THREE.Vector3(1, 0, 0), this.targetRotationY);
-      
-        this.targetRotationY = this.targetRotationY * (1 - this.slowingFactor);
-        this.targetRotationX = this.targetRotationX * (1 - this.slowingFactor);
+        this.animate()
 
         // if(this.currentSection == 0) {
         //     gsap.to(
@@ -201,6 +167,36 @@ export default class Globe {
         //     )
         //     console.log('Hi!')
         // }
+    }
+
+
+    animate() {
+        this.rotateAroundWorldAxis(this.model, new THREE.Vector3(0, 1, 0), this.targetRotationX);
+        this.rotateAroundWorldAxis(this.model, new THREE.Vector3(1, 0, 0), this.targetRotationY);
+
+        this.targetRotationY = this.targetRotationY * (1 - this.slowingFactor);
+        this.targetRotationX = this.targetRotationX * (1 - this.slowingFactor);
+    }
+
+
+
+    rotateAroundObjectAxis(object, axis, radians) {
+        this.rotationMatrix = new THREE.Matrix4()
+
+        this.rotationMatrix.makeRotationAxis(axis.normalize(), radians)
+        object.matrix.multiply(this.rotationMatrix)
+        object.rotation.setFromRotationMatrix(object.matrix)
+    }
+
+    rotateAroundWorldAxis(object, axis, radians) {
+
+        this.rotationMatrix = new THREE.Matrix4()
+
+        this.rotationMatrix.makeRotationAxis(axis.normalize(), radians)
+        this.rotationMatrix.multiply(object.matrix)
+        object.matrix = this.rotationMatrix
+        object.rotation.setFromRotationMatrix(object.matrix)
+
     }
 
 }
