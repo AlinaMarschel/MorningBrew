@@ -50,6 +50,12 @@ export default [
     },
 
     {
+        name: 'jungleHillBackground03',
+        type: 'texture',
+        path: ['textures/jungle_transition/background_hill_01.png']
+    },
+
+    {
         name: 'bgtree01',
         type: 'texture',
         path: ['textures/jungle_transition/bg_tree01.png']
@@ -77,6 +83,24 @@ export default [
         name: 'plant03',
         type: 'texture',
         path: ['textures/jungle_transition/plant03.png']
+    },
+
+    {
+        name: 'plant04',
+        type: 'texture',
+        path: ['textures/jungle_transition/monstera.png']
+    },
+
+    {
+        name: 'plant05',
+        type: 'texture',
+        path: ['textures/jungle_transition/plant05.png']
+    },
+
+    {
+        name: 'plant06',
+        type: 'texture',
+        path: ['textures/jungle_transition/plant06.png']
     },
 
     {
@@ -117,7 +141,5 @@ export default [
         type: 'gtlfModel',
         path: 'models/coffee_pin.glb'
     },
-
-
 
 ]

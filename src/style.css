@@ -80,7 +80,21 @@ p {
   overflow: hidden;
   left: 0;
   top: 0;
-  transition: all ease-in-out 1s;
+  transition: all ease-in-out 3s;
+}
+
+#jungle-text {
+  width: 100%;
+  position: absolute;
+  z-index: 100;
+  left: 150%;
+  transition: all ease-in-out 7.5s;
+}
+
+#jungle-text h2 {
+  color: #E3C29E;
+  font-size: 18em;
+  padding-top: 220px;
 }
 
 #scroll-container {
@@ -89,7 +103,7 @@ p {
   position: absolute;
   width: 100%;
   left: 200%;
-  transition: all ease-in-out 5s;
+  transition: all ease-in-out 9.5s;
 }
 
 

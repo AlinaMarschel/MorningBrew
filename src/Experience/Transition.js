@@ -4,19 +4,24 @@ import gsap from 'gsap'
 export default class Transition {
 
     parameters = {
-        duration: 8,
+        duration: 12,
     }
 
     domElements = {
         landingButton: document.getElementById('explore'),
         landingPage: document.getElementById('landingpage'),
-        scrollContainer: document.getElementById('scroll-container')
+        scrollContainer: document.getElementById('scroll-container'),
+        jungleText: document.getElementById('jungle-text')
     }
+
+
 
     constructor() {
         this.experience = new Experience()
         this.camera = this.experience.camera.instance
         this.globe = this.experience.world.globe
+
+        this.jungle = this.experience.world.jungle
 
         this.onButtonClick()
     }
@@ -29,6 +34,7 @@ export default class Transition {
 
     startTransition() {
         this.domElements.landingPage.style.left = '-200%'
+        this.domElements.jungleText.style.left= '-100%'
         this.domElements.scrollContainer.style.left = '0%'
 
         gsap.to(
@@ -36,8 +42,17 @@ export default class Transition {
             duration: this.parameters.duration,
             // ease: 'power2.inOut',
             ease:'slow (0.5, 0.4, false)',
-            x: 40
-        })
-
+            x: 40,
+            // z: -40,
+            // y: 20
+        });     
+        
+        gsap.to(
+            this.jungle.plant01, {
+                duration: 3,
+                ease: 'power2.inOut',
+                x: 2,
+            }
+        )
     }
 }
