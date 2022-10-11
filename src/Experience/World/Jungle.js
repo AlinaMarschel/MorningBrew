@@ -1,21 +1,70 @@
 import * as THREE from 'three'
-import { Color, sRGBEncoding } from 'three';
 import Experience from "../Experience";
+import gsap from "gsap"
+
+const jungleSprites = [
+    {
+        source: "jungleHillBackground02",
+        scale: {x:  10,  y: 10, z: 0},
+        position: {x: 10, y: 10, z: 0},
+        direction: "right",
+        targetX: 10
+    }, 
+    {
+        source: "jungleHillBackground03",
+        scale: {x:  10,  y: 10, z: 0},
+        position: {x: 10, y: 10, z: 10},
+        direction: "left",
+        targetX: 8
+    }
+]
 
 
 export default class Jungle {
 
     constructor() {
-
         this.experience = new Experience()
         this.debug = this.experience.debug
         this.scene = this.experience.scene
         this.resources = this.experience.resources
+        
+        this.initLayers()
+    }
 
-        //setTexture()
-        this.setSprite()
-        this.debugJungle()
+    playAnimation() {
+        for (let i = 0; i < jungleSprites.length; i++) {
+            const s = jungleSprites[i]
+            
+            // let test = 0
+            // if(s.direction == "left") {
+            //     test = 5
+            // } else {
+            //     test = -5
+            // }
 
+            //wie gehts ? gut : schlecht
+            gsap.to(s.sprite.position, {
+                x: s.direction === "left" ? -s.targetX : s.targetX,
+                duration: 5,
+                delay: i + 1
+            })
+        }
+    }
+    
+    initLayers() {
+        jungleSprites.forEach(s => {
+            const texture = this.resources.items[s.source]
+            texture.encoding = THREE.sRGBEncoding
+            const material = new THREE.SpriteMaterial({ map: texture })
+            const sprite = new THREE.Sprite(material)
+
+            sprite.position.set(s.position.x, s.position.y, s.position.z)
+            sprite.scale.set(s.scale.x, s.scale.y, s.scale.z)
+
+            this.scene.add(sprite)
+
+            s.sprite = sprite
+        })
     }
 
     setSprite() {
@@ -299,6 +348,4 @@ export default class Jungle {
         this.debug.ui.add(this.lianen03.position, 'y', -4, 30, 0.01,).name('lianen03 // y-pos:')
 
     }
-
-
 }

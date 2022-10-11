@@ -68,12 +68,12 @@ export default class Globe {
           0,
           "XYZ"
         )
-      );
+      )
 
       this.model.quaternion.multiplyQuaternions(
         deltaRotationQuaternion,
         this.model.quaternion
-      );
+      )
     }
 
     this.previousMousePosition = {
@@ -90,5 +90,7 @@ export default class Globe {
     return angle * (Math.PI / 180);
   }
 
-  update() {}
+  update() {
+
+  }
 }

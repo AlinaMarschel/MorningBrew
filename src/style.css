@@ -18,8 +18,8 @@
   left: 0;
   outline: none;
   z-index: -1;
-  background: rgb(248,234,218);
-  background: radial-gradient(circle, rgba(248,234,218,1) 0%, rgba(227,194,158,1) 100%);
+  background: rgb(248, 234, 218);
+  background: radial-gradient(circle, rgba(248, 234, 218, 1) 0%, rgba(227, 194, 158, 1) 100%);
 }
 
 body {
@@ -51,6 +51,8 @@ h3 {
 
 p {
   font-size: 18px;
+  color: #2d2d2d;
+  line-height: 1.5;
 }
 
 #logo {
@@ -123,13 +125,17 @@ p {
 
 #brazil-product h2 {
   font-size: 2.2rem;
-  margin-top: 1.5rem;
 }
 
 #support h2,
 #shop h2 {
   font-size: 4.2rem;
   font-family: 'BNBrickHouse';
+  line-height: 1em;
+}
+
+#support p {
+  color: #F8EADA;
 }
 
 
@@ -182,7 +188,8 @@ p {
 }
 
 #support {
-  padding-top: 10rem;;
+  padding-top: 10rem;
+  ;
   width: 66%;
   color: #E3C29E;
 }
@@ -190,13 +197,13 @@ p {
 #support h3 {
   font-size: 2rem;
   font-weight: bold;
-  padding: 2rem 0;
+  padding: 1rem 0 0 0;
 }
 
 #support p {
   font-size: 1rem;
   font-weight: normal;
-  line-height: 2;
+  line-height: 1.6;
   padding-top: 1rem;
 }
 
@@ -356,6 +363,100 @@ img {
 }
 
 
+/**
+*   SHOP
+**/
+
+.product-card {
+  display: flex;
+}
+
+.product-image {
+  background-position: center center;
+  background-image: url(/static/img/brazil_blend_800x600.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 33%;
+  height: 450px;
+  border-radius: 5px 0 0 5px;
+}
+
+.product-description {
+  width: 33%;
+  padding-left: 1em;
+  background-color: rgba(227, 194, 158, .25);
+  padding-top: 0.5em;
+}
+.product-description h3 {
+  font-family: 'BNBrickHouse';
+  color: #013936;
+  font-size: 30px;
+  margin-bottom: 0.3em;
+}
+
+.product-amount {
+  list-style-type: none;
+  padding: 0;
+  margin: -0.2em 0 0.3em 0;
+}
+.product-amount li {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+
+.product-amount li a {
+  color: #013936;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 5px 30px;
+  border: 1px solid #013936;
+  border-radius: 20px;
+  margin-right: 10px;
+  transition: all ease-in-out .25s;
+}
+
+.product-amount li a:hover {
+  transition: all ease-in-out .25s;
+  color: #F8EADA;
+  background-color: #013936;
+}
+
+.attribute-points {
+  margin: -0.5em 0 0 0;
+  padding: 0 !important;
+  list-style-type: none;
+}
+
+.attribute-point {
+  width: 15px;
+  height: 15px;
+  background-color: none;
+  border: 1px solid;
+  border-color: #013936;
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 0;
+  padding: 0;
+  border-radius: 100%;
+}
+
+.attribute-points[data-value="0"] .attribute-point:nth-child(-n),
+.attribute-points[data-value="1"] .attribute-point:nth-child(-n+1),
+.attribute-points[data-value="2"] .attribute-point:nth-child(-n+2),
+.attribute-points[data-value="3"] .attribute-point:nth-child(-n+3),
+.attribute-points[data-value="4"] .attribute-point:nth-child(-n+4),
+.attribute-points[data-value="5"] .attribute-point:nth-child(-n+5),
+.attribute-points[data-value="6"] .attribute-point:nth-child(-n+6) {
+  background-color: #013936;
+}
+
+.product-diagramm {
+  width: 33%;
+  background-color: rgba(227, 194, 158, .25);
+  padding: 1em 0.5em 0.2em;
+  border-radius: 0 5px 5px 0;
+}
 
 /**
 *   FOOTER
@@ -381,7 +482,6 @@ img {
 
 #footer>div>p {
   color: #013936;
-  line-height: 2.2;
 }
 
 #footer>div>p>a {

@@ -14,14 +14,12 @@ export default class Transition {
         jungleText: document.getElementById('jungle-text')
     }
 
-
-
     constructor() {
         this.experience = new Experience()
         this.camera = this.experience.camera.instance
         this.globe = this.experience.world.globe
 
-        this.jungle = this.experience.world.jungle
+        this.world = this.experience.world
 
         this.onButtonClick()
     }
@@ -37,6 +35,9 @@ export default class Transition {
         this.domElements.jungleText.style.left= '-100%'
         this.domElements.scrollContainer.style.left = '0%'
 
+        this.world.jungle.playAnimation()
+        return
+
         gsap.to(
             this.camera.position, {
             duration: this.parameters.duration,
@@ -46,13 +47,6 @@ export default class Transition {
             // z: -40,
             // y: 20
         });     
-        
-        gsap.to(
-            this.jungle.plant01, {
-                duration: 3,
-                ease: 'power2.inOut',
-                x: 2,
-            }
-        )
+    
     }
 }
