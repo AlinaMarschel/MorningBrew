@@ -50,7 +50,7 @@ h3 {
 }
 
 p {
-  font-size: 18px;
+  font-size: 16px;
   color: #2d2d2d;
   line-height: 1.5;
 }
@@ -118,6 +118,27 @@ p {
 /**
 *  PRODUCT PAGE STYLES
 **/
+
+#earth-icon {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 0.8em;
+  margin-top: 0;
+  top: 25px;
+  transition: all ease-in-out .3s;
+  transform: rotate(0deg);
+}
+
+#earth-icon img {
+  transition: all ease-in-out .3s;
+  transform: rotate(0deg);
+}
+
+#earth-icon:hover img {
+  transition: all ease-in-out .3s;
+  transform: rotate(25deg);
+}
 
 #brazil-product h1 {
   font-size: 5.5rem;
@@ -189,9 +210,10 @@ p {
 
 #support {
   padding-top: 10rem;
-  ;
   width: 66%;
   color: #E3C29E;
+  z-index: 10;
+  position: relative;
 }
 
 #support h3 {
@@ -201,7 +223,7 @@ p {
 }
 
 #support p {
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: normal;
   line-height: 1.6;
   padding-top: 1rem;
@@ -499,4 +521,78 @@ img {
   position: absolute;
   right: 0;
   bottom: 0;
+}
+
+
+
+@media (max-width: 1550px) {
+  #logo {
+    width: 11rem;
+  }
+
+  #brazil-product h1 {
+    font-size: 70px;
+  }
+
+  #brazil-product h2 {
+    font-size: 1.8rem;
+  }
+
+  #support h2, #shop h2 {
+    font-size: 60px;
+  }
+
+  #support h3 {
+    font-size: 28px;
+  }
+
+  #explore {
+    font-size: 14px;
+    padding: 15px 25px;
+  }
+
+  #section-headline {
+    margin-top: 1em;
+  }
+
+  #shop {
+    padding-bottom: 14em;
+  }
+
+  #plant-asset-01 {
+    background-image: url(../static/textures/jungle_transition/plant02.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 40%;
+    height: 70%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(-1);
+    z-index: 2;
+  }
+
+  #bg-hill-asset {
+    background-image: url(../static/textures/jungle_transition/background_hill_01.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: scaleX(-1);
+    background-position: top;
+    background-position-y: -13em;
+    z-index: 1;
+    background-position-x: 2em;
+    opacity: 0.4;
+  }
+
+}
+@media (max-width: 992px) {	
+
+}
+@media (max-width: 768px) {
+
 }
