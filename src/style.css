@@ -56,7 +56,7 @@ p {
 }
 
 #logo {
-  margin-top: .8em;
+  margin-top: .6em;
   width: 15rem;
 }
 
@@ -81,7 +81,8 @@ p {
   pointer-events: none;
   overflow: hidden;
   left: 0;
-  top: 0;
+
+  bottom: 0;
   transition: all ease-in-out 3s;
 }
 
@@ -104,7 +105,7 @@ p {
   max-height: 100% !important;
   position: absolute;
   width: 100%;
-  left: 200%;
+  bottom: 200%;
   transition: all ease-in-out 9.5s;
 }
 
@@ -119,20 +120,32 @@ p {
 *  PRODUCT PAGE STYLES
 **/
 
-#earth-icon {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  right: 0.8em;
+#header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.6em;
+}
+
+#header #logo {
   margin-top: 0;
-  top: 25px;
+}
+
+
+#earth-icon {
   transition: all ease-in-out .3s;
   transform: rotate(0deg);
+}
+
+#earth-icon a {
+  height: 60px;
+  display: inline-block;
+  width: 60px;
 }
 
 #earth-icon img {
   transition: all ease-in-out .3s;
   transform: rotate(0deg);
+  vertical-align: top;
 }
 
 #earth-icon:hover img {
@@ -155,23 +168,52 @@ p {
   line-height: 1em;
 }
 
-#support p {
-  color: #F8EADA;
+
+
+
+#plant-asset-01 {
+  background-image: url(../static/textures/jungle_transition/plant02.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 40%;
+  height: 70%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: scaleX(-1);
+  z-index: 2;
 }
 
+#bg-hill-asset {
+  background-image: url(../static/textures/jungle_transition/background_hill_01.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: scaleX(-1);
+  background-position: top;
+  background-position-y: -13em;
+  z-index: 1;
+  background-position-x: 2em;
+  opacity: 0.4;
+}
 
 .btn {
-  font-family: 'BNBrickHouse';
-  font-size: 0.8rem;
-  letter-spacing: 0.1rem;
-  background-color: #013936;
-  border-radius: 50px;
-  color: #F8EADA;
-  padding: 0.75rem 2rem;
-  text-transform: uppercase;
+  font-size: 16px;
+  background: rgb(233,154,126);
+  background: linear-gradient(24deg, rgba(233,154,126,.5) 10%, rgba(248,234,218,0.8) 100%);
+    background-color: rgba(0, 0, 0, 0);
+  border-radius: 2px;
+  color: #fff;
+  padding: 0.75em 1em;
   transition: ease-in-out .25s;
   text-decoration: none;
   pointer-events: all;
+  border: 2px solid #F8EADA;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -192,6 +234,9 @@ p {
 
 #product-section h2 {
   font-family: gopher, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0.2em 0 0 0;
 }
 
 
@@ -219,14 +264,15 @@ p {
 #support h3 {
   font-size: 2rem;
   font-weight: bold;
-  padding: 1rem 0 0 0;
+  padding: 0.2em 0 0 0;
 }
 
 #support p {
   font-size: 16px;
   font-weight: normal;
   line-height: 1.6;
-  padding-top: 1rem;
+  padding-top: 2.5em;
+  color: #F8EADA;
 }
 
 
@@ -249,7 +295,7 @@ p {
   margin-bottom: 1.8rem;
 }
 
-#explore {
+/* #explore {
   background-color: #E99A7E;
   color: #013936;
   font-size: 1rem;
@@ -259,7 +305,7 @@ p {
 #explore:hover {
   background-color: #F8EADA;
   cursor: pointer;
-}
+} */
 
 /** 
 *   Shop Card Items
@@ -393,9 +439,16 @@ img {
   display: flex;
 }
 
+.product-card h3 {
+  font-family: 'BNBrickHouse';
+  color: #013936;
+  font-size: 30px;
+  margin-bottom: 0.3em;
+}
+
 .product-image {
   background-position: center center;
-  background-image: url(/static/img/brazil_blend_800x600.jpg);
+  background-image: url(/static/img/brazil-blend-shop.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 33%;
@@ -405,22 +458,18 @@ img {
 
 .product-description {
   width: 33%;
-  padding-left: 1em;
+  padding-left: 0.5em;
   background-color: rgba(227, 194, 158, .25);
   padding-top: 0.5em;
 }
-.product-description h3 {
-  font-family: 'BNBrickHouse';
-  color: #013936;
-  font-size: 30px;
-  margin-bottom: 0.3em;
-}
+
 
 .product-amount {
   list-style-type: none;
   padding: 0;
   margin: -0.2em 0 0.3em 0;
 }
+
 .product-amount li {
   padding: 0;
   margin: 0;
@@ -445,14 +494,14 @@ img {
 }
 
 .attribute-points {
-  margin: -0.5em 0 0 0;
+  margin: -0.6em 0 0 0;
   padding: 0 !important;
   list-style-type: none;
 }
 
 .attribute-point {
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
   background-color: none;
   border: 1px solid;
   border-color: #013936;
@@ -461,6 +510,7 @@ img {
   margin-top: 0;
   padding: 0;
   border-radius: 100%;
+  opacity: .3;
 }
 
 .attribute-points[data-value="0"] .attribute-point:nth-child(-n),
@@ -471,12 +521,13 @@ img {
 .attribute-points[data-value="5"] .attribute-point:nth-child(-n+5),
 .attribute-points[data-value="6"] .attribute-point:nth-child(-n+6) {
   background-color: #013936;
+  opacity: 1;
 }
 
 .product-diagramm {
   width: 33%;
   background-color: rgba(227, 194, 158, .25);
-  padding: 1em 0.5em 0.2em;
+  padding: 0.5em 0.5em 0 0;
   border-radius: 0 5px 5px 0;
 }
 
@@ -538,7 +589,8 @@ img {
     font-size: 1.8rem;
   }
 
-  #support h2, #shop h2 {
+  #support h2,
+  #shop h2 {
     font-size: 60px;
   }
 
@@ -559,40 +611,10 @@ img {
     padding-bottom: 14em;
   }
 
-  #plant-asset-01 {
-    background-image: url(../static/textures/jungle_transition/plant02.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 40%;
-    height: 70%;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    transform: scaleX(-1);
-    z-index: 2;
-  }
 
-  #bg-hill-asset {
-    background-image: url(../static/textures/jungle_transition/background_hill_01.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    transform: scaleX(-1);
-    background-position: top;
-    background-position-y: -13em;
-    z-index: 1;
-    background-position-x: 2em;
-    opacity: 0.4;
-  }
 
 }
-@media (max-width: 992px) {	
 
-}
-@media (max-width: 768px) {
+@media (max-width: 992px) {}
 
-}
+@media (max-width: 768px) {}

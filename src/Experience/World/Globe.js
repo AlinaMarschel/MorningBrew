@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import Experience from "../Experience";
+import gsap from 'gsap'
 
 export default class Globe {
   constructor() {
@@ -88,6 +89,17 @@ export default class Globe {
 
   toRadians(angle) {
     return angle * (Math.PI / 180);
+  }
+
+  playAnimation() 
+  {     
+    gsap.to(
+      this.model.position, {
+      duration: 25,
+      // ease: 'power2.inOut',
+      ease:'power2.easeOut',
+      y: -20
+  });  
   }
 
   update() {

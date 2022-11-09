@@ -4,7 +4,7 @@ import gsap from 'gsap'
 export default class Transition {
 
     parameters = {
-        duration: 12,
+        duration: 30,
     }
 
     domElements = {
@@ -17,9 +17,8 @@ export default class Transition {
     constructor() {
         this.experience = new Experience()
         this.camera = this.experience.camera.instance
-        this.globe = this.experience.world.globe
-
         this.world = this.experience.world
+        
 
         this.onButtonClick()
     }
@@ -31,22 +30,31 @@ export default class Transition {
     }
 
     startTransition() {
-        this.domElements.landingPage.style.left = '-200%'
-        this.domElements.jungleText.style.left= '-100%'
-        this.domElements.scrollContainer.style.left = '0%'
+        this.domElements.landingPage.style.bottom = '-200%'
+        this.domElements.jungleText.style.left = '-100%'
+        this.domElements.scrollContainer.style.bottom = '0%'
 
         this.world.jungle.playAnimation()
-        return
+        this.world.globe.playAnimation()
+
+        // gsap.timeline()
+        //     .from(this.camera.position,
+        //         {
+        //             duration: 1,
+        //             ease:'slow (0.5, 0.4, false)',
+        //             x: 100
+        //         })
 
         gsap.to(
             this.camera.position, {
             duration: this.parameters.duration,
             // ease: 'power2.inOut',
-            ease:'slow (0.5, 0.4, false)',
-            x: 40,
-            // z: -40,
-            // y: 20
-        });     
-    
+            ease:'slow (0.1, 0.4, false)',
+            // x: 40,
+            z: -80,
+            y: 0
+        });  
+
+
     }
 }
