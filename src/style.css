@@ -69,6 +69,7 @@ p {
 }
 
 
+
 /**
 *  HOMEPAGE STYLES
 **/
@@ -109,12 +110,20 @@ p {
   transition: all ease-in-out 9.5s;
 }
 
-
 #landingpage #hero {
-  padding-top: 1.5rem;
   text-align: right;
 }
 
+
+#hero h1 {
+  font-size: 70px;
+}
+
+#hero h2 {
+  font-family: gopher, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
 
 /**
 *  PRODUCT PAGE STYLES
@@ -290,6 +299,20 @@ p {
   color: #013936;
 }
 
+.shop-btn {
+  background: none;
+  border: 1px solid #013936;
+  color: #013936;
+  border-radius: 3px;
+  padding: 7px 20px;
+  font-size: 16px;
+  transition: all ease-in-out .25s;
+}
+
+.shop-btn:hover {
+  background-color: #E3C29E;
+}
+
 #section-headline {
   display: block;
   margin-bottom: 1.8rem;
@@ -383,22 +406,6 @@ img {
   }
 }
 
-.card__image--flowers {
-  background-image: url(/static/img/brazil_blend_800x600.jpg);
-}
-
-.card__image--river {
-  background-image: url(/static/img/brazil_blend_800x600.jpg);
-}
-
-.card__image--record {
-  background-image: url(/static/img/brazil_blend_800x600.jpg);
-}
-
-.card__image--fence {
-  background-image: url(/static/img/brazil_blend_800x600.jpg);
-}
-
 .card__title {
   font-size: 2rem;
   font-weight: 300;
@@ -437,6 +444,8 @@ img {
 
 .product-card {
   display: flex;
+  background-color: rgba(227, 194, 158, .25);
+  border-radius: 0 5px 5px 0;
 }
 
 .product-card h3 {
@@ -459,7 +468,6 @@ img {
 .product-description {
   width: 33%;
   padding-left: 0.5em;
-  background-color: rgba(227, 194, 158, .25);
   padding-top: 0.5em;
 }
 
@@ -482,7 +490,7 @@ img {
   font-size: 16px;
   padding: 5px 30px;
   border: 1px solid #013936;
-  border-radius: 20px;
+  border-radius: 3px;
   margin-right: 10px;
   transition: all ease-in-out .25s;
 }
@@ -526,9 +534,7 @@ img {
 
 .product-diagramm {
   width: 33%;
-  background-color: rgba(227, 194, 158, .25);
-  padding: 0.5em 0.5em 0 0;
-  border-radius: 0 5px 5px 0;
+  padding: 0.5em 0em 0 0.2em;
 }
 
 /**
@@ -581,6 +587,11 @@ img {
     width: 11rem;
   }
 
+  #earth-icon a {
+    width: 48px;
+    height: 48px;
+  }
+  
   #brazil-product h1 {
     font-size: 70px;
   }
@@ -601,6 +612,12 @@ img {
   #explore {
     font-size: 14px;
     padding: 15px 25px;
+    margin-top: 35px;
+    display: inline-block;
+  }
+
+  .shop-icon {
+    padding-left: 12px;
   }
 
   #section-headline {

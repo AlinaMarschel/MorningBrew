@@ -178,28 +178,38 @@ export default class Jungle {
     //     })
     // }
 
-    timelineIntro() {
+    timelineIntro() 
+    {
         this.tlIntro = gsap.timeline()
 
         this.tlIntro.fromTo(this.backgroundSprite.position, {y:-80, z:-80}, {duration: 4, y:0, z:-55})
-        // this.tlIntro.fromTo(this.backgroundSprite.scale, 4, {x: 0, y:0, z:0},{x: 80, y:80, z:0}, ">-=5")
         this.tlIntro.fromTo(this.backgroundHillSprite02.position, {x: -80 }, {duration:2, x:-12, y:0}, ">-=4")
         this.tlIntro.fromTo(this.backgroundHillSprite03.position, {x: 80}, {duration:2, x:15}, ">-=1")
         this.tlIntro.fromTo(this.backgroundHillSprite.position, {x:-80}, {duration:2, x:0, y:5.5}, ">-=2")
-        
-        // this.tl.from(this.backgroundSprite.position, { duration: 3, y: 100 })
-        //     .from(this.backgroundHillSprite.position, { duration: 1, x: 100 })
-        //     .from(this.backgroundHillSprite02.position, { duration: 1, x: 100 })
-        //     .from(this.backgroundHillSprite03.position, { duration: 1, x: 100 })
-        //     .fromTo()
 
         return this.tlIntro
     }
+
+
+    
+
+    timelineMiddle()
+    {
+        this.tlMiddle = gsap.timeline()
+
+        this.tlMiddle.fromTo(this.backgroundTree02.position, {x:80, y: -80}, {duration: 2, x:1.25, y:0.25, z:-20})
+        this.tlMiddle.fromTo(this.backgroundTree01.position, {x:-80}, {duration: 2, x:-4.5, z:-25}, ">-=2")
+        this.tlMiddle.fromTo(this.plant02.position, {x:-80, y:-80}, {duration: 2.5, x:-13, y:-5, z:-40}, ">-=2")
+
+        return this.tlMiddle
+    }
+
 
     playAnimation() {
         this.masterTimeline = gsap.timeline()
 
         this.masterTimeline.add(this.timelineIntro())
+                            .add(this.timelineMiddle(), "-=4")
             // .from(this.backgroundSprite.position, { duration: 1, y: 100 })
             // .from(this.backgroundHillSprite.position, { duration: 1, x: 100},)
 
@@ -366,28 +376,34 @@ export default class Jungle {
         //Positioning
 
         this.backgroundSprite.scale.set(80, 80, 0)
-        this.backgroundSprite.position.set(0, 0, -55)
+        this.backgroundSprite.position.set(0, -100, -55)
 
         this.backgroundHillSprite.scale.set(40, 40, 0)
-        this.backgroundHillSprite.position.set(12, 8, -53)
+        //this.backgroundHillSprite.position.set(12, 8, -53)
+        this.backgroundHillSprite.position.set(-100, 8, -53)
 
         this.backgroundHillSprite02.scale.set(25, 25, 0)
-        this.backgroundHillSprite02.position.set(-12, 0, -30)
+        //this.backgroundHillSprite02.position.set(-12, 0, -30)
+        this.backgroundHillSprite02.position.set(-100, 0, -30)
 
         this.backgroundHillSprite03.scale.set(40, 40, 0)
-        this.backgroundHillSprite03.position.set(15, 5, -40)
+        //this.backgroundHillSprite03.position.set(15, 5, -40)
+        this.backgroundHillSprite03.position.set(-100, 5, -40)
 
-        this.backgroundTree01.scale.set(4, 4, 0)
-        this.backgroundTree01.position.set(0, 0, 0)
-
-        this.backgroundTree02.scale.set(4, 4, 0)
-        this.backgroundTree02.position.set(0, 0, 0)
+        this.backgroundTree01.scale.set(14, 14, 0)
+        //this.backgroundTree01.position.set(-4.25, 0.25, -10)
+        this.backgroundTree01.position.set(-100, 0.25, -10)
+        
+        this.backgroundTree02.scale.set(14, 14, 0)
+        //this.backgroundTree02.position.set(1, 0, 0)
+        this.backgroundTree02.position.set(-100, 0, 0)
 
         this.plant01.scale.set(2.5, 2.5, 0)
-        this.plant01.position.set(0, 0, 0)
+        this.plant01.position.set(1, 0, 0)
 
-        this.plant02.scale.set(1.5, 1.5, 0)
-        this.plant02.position.set(0, 0, 0)
+        this.plant02.scale.set(16, 16, 0)
+        //this.plant02.position.set(-18, -4, -35)
+        this.plant02.position.set(-100, -4, -35)
 
         this.plant03.scale.set(1.5, 1.5, 0)
         this.plant03.position.set(0, 0, 0)
@@ -422,10 +438,10 @@ export default class Jungle {
                 this.backgroundHillSprite,
                 this.backgroundHillSprite02,
                 this.backgroundHillSprite03,
-                // this.backgroundTree01,
-                // this.backgroundTree02,
-                // this.plant01,
-                // this.plant02,
+                this.backgroundTree01,
+                this.backgroundTree02,
+                //this.plant01,
+                this.plant02,
                 // this.plant03,
                 // this.plant04,
                 // this.plant05,

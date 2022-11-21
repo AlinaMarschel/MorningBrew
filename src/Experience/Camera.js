@@ -14,7 +14,7 @@ export default class Camera
         this.delta = this.experience.time.delta
 
         this.setInstance()
-        this.setOrbitControls()
+        //this.setOrbitControls()
         this.resize()
         this.setCursor()
         this.setScroll()
@@ -60,13 +60,13 @@ export default class Camera
     setOrbitControls()
     {
         this.controls = new OrbitControls(this.instance, this.canvas)
-        this.controls.enableDamping = true
+        this.controls.enableDamping = false
 
-        this.controls.autoRotate = true 
+        this.controls.autoRotate = false 
         this.controls.autoRotateSpeed = 0.5
 
-        this.controls.enableZoom = true
-        this.controls.enablePan = true
+        this.controls.enableZoom = false
+        this.controls.enablePan = false
     }
 
     resize()
