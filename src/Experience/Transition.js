@@ -4,7 +4,7 @@ import gsap from 'gsap'
 export default class Transition {
 
     parameters = {
-        duration: 30,
+        duration: 20,
     }
 
     domElements = {
@@ -31,7 +31,7 @@ export default class Transition {
 
     startTransition() {
         this.domElements.landingPage.style.bottom = '-200%'
-        this.domElements.jungleText.style.left = '-100%'
+        this.domElements.jungleText.style.bottom = '-100%'
         this.domElements.scrollContainer.style.bottom = '0%'
 
         this.world.jungle.playAnimation()
@@ -49,10 +49,10 @@ export default class Transition {
             this.camera.position, {
             duration: this.parameters.duration,
             // ease: 'power2.inOut',
-            ease:'slow (0.1, 0.4, false)',
+            ease:'slow (0.5, 2, true)',
             // x: 40,
             z: -80,
-            y: 0
+            y: 1.5
         });  
 
 

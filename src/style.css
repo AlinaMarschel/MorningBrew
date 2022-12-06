@@ -18,8 +18,8 @@
   left: 0;
   outline: none;
   z-index: -1;
-  background: rgb(248, 234, 218);
-  background: radial-gradient(circle, rgba(248, 234, 218, 1) 0%, rgba(227, 194, 158, 1) 100%);
+  background: rgb(1,57,54);
+  background: radial-gradient(circle, rgba(1,57,54,1) 0%, rgba(0,38,36,1) 100%);
 }
 
 body {
@@ -57,7 +57,7 @@ p {
 
 #logo {
   margin-top: .6em;
-  width: 15rem;
+  width: 11rem;
 }
 
 .section {
@@ -74,7 +74,7 @@ p {
 *  HOMEPAGE STYLES
 **/
 #landingpage {
-  color: #013936;
+  color: rgb(227, 194, 158);
   z-index: 10;
   height: 100%;
   position: absolute;
@@ -82,23 +82,23 @@ p {
   pointer-events: none;
   overflow: hidden;
   left: 0;
-
   bottom: 0;
-  transition: all ease-in-out 3s;
+  transition: all ease-in-out 2s;
 }
 
 #jungle-text {
   width: 100%;
   position: absolute;
   z-index: 100;
-  left: 150%;
-  transition: all ease-in-out 7.5s;
+  bottom: 150%;
+  transition: all ease 9.5s;
 }
 
 #jungle-text h2 {
   color: #E3C29E;
   font-size: 18em;
   padding-top: 220px;
+  text-align: center;
 }
 
 #scroll-container {
@@ -107,22 +107,23 @@ p {
   position: absolute;
   width: 100%;
   bottom: 200%;
-  transition: all ease-in-out 9.5s;
+  transition: all ease-in-out 5.5s;
 }
 
 #landingpage #hero {
-  text-align: right;
+  text-align: center;
+  margin-top: 50px;
 }
 
 
 #hero h1 {
-  font-size: 70px;
+  font-size: 50px;
 }
 
 #hero h2 {
   font-family: gopher, sans-serif;
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 17px;
+  font-weight: normal;
 }
 
 /**
@@ -146,9 +147,9 @@ p {
 }
 
 #earth-icon a {
-  height: 60px;
+  height: 50px;
   display: inline-block;
-  width: 60px;
+  width: 50px;
 }
 
 #earth-icon img {
@@ -163,11 +164,11 @@ p {
 }
 
 #brazil-product h1 {
-  font-size: 5.5rem;
+  font-size: 64px;
 }
 
 #brazil-product h2 {
-  font-size: 2.2rem;
+  font-size: 18px;
 }
 
 #support h2,
@@ -243,9 +244,9 @@ p {
 
 #product-section h2 {
   font-family: gopher, sans-serif;
-  font-size: 2rem;
-  font-weight: bold;
+  font-weight: normal;
   padding: 0.2em 0 0 0;
+  line-height: 28px;
 }
 
 
@@ -584,7 +585,7 @@ img {
 
 @media (max-width: 1550px) {
   #logo {
-    width: 11rem;
+    width: 10rem;
   }
 
   #earth-icon a {
@@ -593,11 +594,11 @@ img {
   }
   
   #brazil-product h1 {
-    font-size: 70px;
+    font-size: 64px;
   }
 
   #brazil-product h2 {
-    font-size: 1.8rem;
+    font-size: 18px;
   }
 
   #support h2,

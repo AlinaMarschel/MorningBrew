@@ -18,8 +18,8 @@ export default class Globe {
   setModel() {
     this.model = this.resource.scene;
 
-    this.model.scale.set(2, 2, 2);
-    this.model.position.y = -1.8;
+    this.model.scale.set(2.65, 2.65, 2.65);
+    this.model.position.y = -2.5;
 
     const globeWater = this.model.children.find((child) => child.name === "water");
     const globeEarth = this.model.children.find((child) => child.name === "earth");
@@ -103,6 +103,6 @@ export default class Globe {
   }
 
   update() {
-
+  
   }
 }
