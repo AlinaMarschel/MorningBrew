@@ -56,6 +56,11 @@ export default class World
         {
             this.globe.update()
         }
+
+        // if(this.jungle) 
+        // {
+        //     this.jungle.update()
+        // }
     }
 
 }

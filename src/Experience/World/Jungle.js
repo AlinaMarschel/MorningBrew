@@ -128,6 +128,7 @@ export default class Jungle {
 
         //this.initLayers()
         this.setSprite()
+        this.playPlantLoopAnimation()
     }
 
     // playAnimation() {
@@ -141,7 +142,6 @@ export default class Jungle {
     //         //     test = -5
     //         // }
 
-    //         //wie gehts ? gut : schlecht
     //         // gsap.to(s.sprite.position, {
     //         //     x: s.direction === "left" ? -s.targetX : s.targetX,
     //         //     duration: 5,
@@ -190,9 +190,6 @@ export default class Jungle {
         return this.tlIntro
     }
 
-
-    
-
     timelineMiddle()
     {
         this.tlMiddle = gsap.timeline()
@@ -219,13 +216,14 @@ export default class Jungle {
 
     playAnimation() {
         this.masterTimeline = gsap.timeline()
-
         this.masterTimeline.add(this.timelineIntro())
                             .add(this.timelineMiddle(), "-=4")
                             .add(this.timelineEnd(), "-=5")
-            // .from(this.backgroundSprite.position, { duration: 1, y: 100 })
-            // .from(this.backgroundHillSprite.position, { duration: 1, x: 100},)
+    }
 
+    playPlantLoopAnimation() {
+        gsap.fromTo(this.plant01Material, {rotation:-0.5}, {duration: 5.5, rotation:-0.58, yoyo: true, repeat: Infinity});  
+        gsap.fromTo(this.plant06Material, {rotation:0.8}, {duration: 2.5, rotation:0.845, yoyo: true, repeat: Infinity});  
     }
 
     setSprite() {
@@ -473,6 +471,10 @@ export default class Jungle {
 
         console.log(this.backgroundSprite)
     }
+
+    // update() {
+    //     this.playPlantLoopAnimation()
+    // }
 
     // Debug
     debugJungle() {

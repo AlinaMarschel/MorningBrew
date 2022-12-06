@@ -68,6 +68,55 @@ p {
   padding-right: 10%;
 }
 
+/* @keyframes anim {
+0%   {box-shadow: 0px 0px 50px #E3C29E;}
+50%  {box-shadow: 0px 0px 10px #E3C29E;}
+100% {box-shadow: 0px 0px 50px #E3C29E;}
+}
+
+@-webkit-keyframes anim {
+0%   {box-shadow: 0px 0px 50px #E3C29E;}
+50%  {box-shadow: 0px 0px 10px #E3C29E;}
+100% {box-shadow: 0px 0px 50px #E3C29E;}
+} */
+
+/* @keyframes anim {
+  0%   {background-position: -150px 20px;}
+  100% {background-position: -50px 10px;}
+  } */
+
+.btn-landingpage {
+  display: inline-block;
+  margin: 0 auto;
+  font-size: 17px;
+  margin-top: 3em;
+  padding: 1.25em 2em;
+  border-radius: 3px;
+  background-color: #E99A7E;
+  color: #F8EADA;
+  position: relative;
+  overflow: hidden;
+  pointer-events: all;
+  background-image: url(../static/img/button_click_and_explore_03.svg);
+  background-size: 220%;
+  background-repeat: no-repeat;
+  background-position: center 10px;
+  cursor: pointer;
+  transition: all ease-in-out .4s;
+  box-shadow: 0px 0px 20px#E3C29E;
+  /* -webkit-animation: anim 1.45s linear infinite;
+  -moz-animation: anim 1.45s linear infinite;
+  -ms-animation: anim 1.45s linear infinite;
+  -o-animation: anim 1.45s linear infinite;
+  animation: anim 1.45s linear infinite; */
+}
+
+.btn-landingpage:hover {
+  transition: all ease-in-out .35s;
+  background-size: 280%;
+  box-shadow: 0px 0px 50px#E3C29E;
+}
+
 
 
 /**
@@ -112,7 +161,6 @@ p {
 
 #landingpage #hero {
   text-align: center;
-  margin-top: 50px;
 }
 
 
