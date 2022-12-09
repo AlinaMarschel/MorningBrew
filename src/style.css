@@ -85,7 +85,7 @@ p {
   100% {background-position: -50px 10px;}
   } */
 
-.btn-landingpage {
+/* .btn-landingpage {
   display: inline-block;
   margin: 0 auto;
   font-size: 17px;
@@ -108,15 +108,78 @@ p {
   -moz-animation: anim 1.45s linear infinite;
   -ms-animation: anim 1.45s linear infinite;
   -o-animation: anim 1.45s linear infinite;
-  animation: anim 1.45s linear infinite; */
-}
+  animation: anim 1.45s linear infinite; 
+} 
+*/
 
-.btn-landingpage:hover {
+/* .btn-landingpage:hover {
   transition: all ease-in-out .35s;
   background-size: 280%;
   box-shadow: 0px 0px 50px#E3C29E;
+} */
+
+#coffee-outline {
+  font-family: 'BNBrickHouse';
+  position: relative;
+}
+/* 
+#coffee-outline:before {
+  content: '';
+  border: 2px solid #EDD7C0;
+  padding: 16px;
+  position: absolute;
+  border-radius: 50%;
+  transform: rotate(-15deg);
+  width: 110%;
+  height: 110%;
+  left: -10px;
+  top: -10px;
+} */
+
+.btn-landingpage {
+  display: inline-block;
+  position: relative;
+  margin: 0 auto;
+  font-size: 17px;
+  margin-top: 3em;
+  padding: 1.5em 2.5em;
+  color: #EDD7C0;
+  pointer-events: all;
+  cursor: pointer;
+  transition: all ease-in-out .4s;
+  border-radius: 50% 50% 50% 50% / 25% 25% 25% 25% ;
+  /* border-radius: 60% 60% 60% 60% / 30% 30% 30% 30% ; */
+  /* border-radius: 60% 60% 60% 60% / 35% 35% 35% 35% ; */
+  border: 2px solid #EDD7C0;
+  overflow: hidden;
+} 
+
+.btn-landingpage:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  width: 110%;
+  height: 110%;
+  transform: translateY(50px);
+  background-color: #E99A7E;
+  z-index: -1;
+  transition: all ease-in-out .4s;
 }
 
+.btn-landingpage:hover{
+  color: #F8EADA;
+  transition: all ease-in-out .4s;
+} 
+
+.btn-landingpage:hover:before{
+  opacity: 1;
+  transform: translateY(0px);
+  transition: all ease-in-out .4s;
+} 
 
 
 /**
@@ -228,38 +291,7 @@ p {
 
 
 
-
-#plant-asset-01 {
-  background-image: url(../static/textures/jungle_transition/plant02.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 40%;
-  height: 70%;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  transform: scaleX(-1);
-  z-index: 2;
-}
-
-#bg-hill-asset {
-  background-image: url(../static/textures/jungle_transition/background_hill_01.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  transform: scaleX(-1);
-  background-position: top;
-  background-position-y: -13em;
-  z-index: 1;
-  background-position-x: 2em;
-  opacity: 0.4;
-}
-
-.btn {
+/* .btn {
   font-size: 16px;
   background: rgb(233,154,126);
   background: linear-gradient(24deg, rgba(233,154,126,.5) 10%, rgba(248,234,218,0.8) 100%);
@@ -272,12 +304,52 @@ p {
   pointer-events: all;
   border: 2px solid #F8EADA;
   cursor: pointer;
+} */
+
+.btn {
+  display: inline-block;
+  position: relative;
+  margin: 0 auto;
+  font-size: 17px;
+  margin-top: 3em;
+  padding: 1.5em 2.5em;
+  color: #EDD7C0;
+  pointer-events: all;
+  cursor: pointer;
+  transition: all ease-in-out .4s;
+  border-radius: 50% 50% 50% 50% / 25% 25% 25% 25% ;
+  /* border-radius: 60% 60% 60% 60% / 30% 30% 30% 30% ; */
+  /* border-radius: 60% 60% 60% 60% / 35% 35% 35% 35% ; */
+  border: 2px solid #EDD7C0;
+  overflow: hidden;
 }
 
-.btn:hover {
+.btn:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  width: 110%;
+  height: 110%;
+  transform: translateY(50px);
   background-color: #E99A7E;
+  z-index: -1;
+  transition: all ease-in-out .4s;
 }
 
+.btn:hover{
+  color: #F8EADA;
+  transition: all ease-in-out .4s;
+} 
+
+.btn:hover:before{
+  opacity: 1;
+  transform: translateY(0px);
+  transition: all ease-in-out .4s;
+} 
 
 
 #product-section {
@@ -297,8 +369,6 @@ p {
   line-height: 28px;
 }
 
-
-
 #brazil-product {
   margin-top: 2em;
 }
@@ -309,6 +379,22 @@ p {
 
 #support-wrapper {
   background-color: #013936;
+  overflow: hidden;
+  position: relative;
+}
+
+#support-wrapper:after {
+  content: '';
+  background-size: cover;
+  background-repeat: no-repeat;
+  background:url(../static/img/hintergrund-support.png);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  right:0;
+  bottom: 0;
+  position: absolute;
 }
 
 #support {
@@ -333,6 +419,35 @@ p {
   color: #F8EADA;
 }
 
+#plant-asset-01 {
+  background-image: url(../static/textures/jungle_transition/plant02.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 40%;
+  height: 70%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: scaleX(-1);
+  z-index: 3;
+}
+
+#bg-hill-asset {
+  background-image: url(../static/textures/jungle_transition/background_hill_01.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: scaleX(-1);
+  background-position: top;
+  background-position-y: -13em;
+  z-index: 3;
+  background-position-x: 2em;
+  opacity: 0.75;
+}
 
 /**
 *   Shop Section Styles
@@ -388,104 +503,6 @@ img {
   max-width: 100%;
   vertical-align: middle;
 }
-
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.cards__item {
-  display: flex;
-  padding: 1rem;
-}
-
-@media (min-width: 40rem) {
-  .cards__item {
-    width: 50%;
-  }
-}
-
-@media (min-width: 56rem) {
-  .cards__item {
-    width: 33.3333%;
-  }
-}
-
-.card {
-  display: flex;
-  flex: 1 1;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.card:hover .card__image {
-  filter: contrast(100%);
-}
-
-.card__content {
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-  padding: 1rem;
-  position: relative;
-}
-
-.card__image {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 0.25rem;
-  overflow: hidden;
-  position: relative;
-  transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
-}
-
-.card__image::before {
-  content: "";
-  display: block;
-  padding-top: 56.25%;
-}
-
-@media (min-width: 40rem) {
-  .card__image::before {
-    padding-top: 66.6%;
-  }
-}
-
-.card__title {
-  font-size: 2rem;
-  font-weight: 300;
-  color: #013936;
-  font-family: 'BNBrickHouse';
-  margin-bottom: 1rem;
-}
-
-.card_text {
-  flex: 1 1 auto;
-  color: #013936;
-  line-height: 1.2;
-  margin-bottom: 1.25rem;
-  font-weight: lighter;
-}
-
-.card_price {
-  font-weight: bold;
-  font-size: 1.25rem;
-}
-
-.card_product_weight {
-  font-weight: lighter;
-}
-
-.card__btn {
-  position: absolute;
-  right: 0;
-  bottom: 1.5rem;
-}
-
 
 /**
 *   SHOP

@@ -410,7 +410,7 @@ export default class Jungle {
         this.backgroundTree02.position.set(-100, 0, 0)
 
         this.plant01.scale.set(1.35, 1.35, 0)
-        this.plant01.position.set(-1.9, -0.65, 2.4)
+        this.plant01.position.set(-2.1, -0.65, 2.4)
 
         this.plant02.scale.set(16, 16, 0)
         //this.plant02.position.set(-18, -4, -35)
@@ -429,7 +429,7 @@ export default class Jungle {
         this.plant05.position.set(-100, -3, -15)
 
         this.plant06.scale.set(1.2, 1.2, 0)
-        this.plant06.position.set(2.05, -0.9, 2.25)
+        this.plant06.position.set(2.15, -0.9, 2.25)
 
         this.lianen01.scale.set(40, 40, 0)
         // this.lianen01.position.set(0, -8, -30)
