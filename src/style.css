@@ -57,7 +57,7 @@ p {
 
 #logo {
   margin-top: .6em;
-  width: 11rem;
+  width: 150px;
 }
 
 .section {
@@ -85,101 +85,54 @@ p {
   100% {background-position: -50px 10px;}
   } */
 
-/* .btn-landingpage {
-  display: inline-block;
-  margin: 0 auto;
-  font-size: 17px;
-  margin-top: 3em;
-  padding: 1.25em 2em;
-  border-radius: 3px;
-  background-color: #E99A7E;
-  color: #F8EADA;
-  position: relative;
-  overflow: hidden;
-  pointer-events: all;
-  background-image: url(../static/img/button_click_and_explore_03.svg);
-  background-size: 220%;
-  background-repeat: no-repeat;
-  background-position: center 10px;
-  cursor: pointer;
-  transition: all ease-in-out .4s;
-  box-shadow: 0px 0px 20px#E3C29E;
-  /* -webkit-animation: anim 1.45s linear infinite;
-  -moz-animation: anim 1.45s linear infinite;
-  -ms-animation: anim 1.45s linear infinite;
-  -o-animation: anim 1.45s linear infinite;
-  animation: anim 1.45s linear infinite; 
-} 
-*/
-
-/* .btn-landingpage:hover {
-  transition: all ease-in-out .35s;
-  background-size: 280%;
-  box-shadow: 0px 0px 50px#E3C29E;
-} */
-
-#coffee-outline {
-  font-family: 'BNBrickHouse';
-  position: relative;
-}
-/* 
-#coffee-outline:before {
-  content: '';
-  border: 2px solid #EDD7C0;
-  padding: 16px;
-  position: absolute;
-  border-radius: 50%;
-  transform: rotate(-15deg);
-  width: 110%;
-  height: 110%;
-  left: -10px;
-  top: -10px;
-} */
 
 .btn-landingpage {
+  font-family: 'BNBrickHouse';
   display: inline-block;
   position: relative;
   margin: 0 auto;
-  font-size: 17px;
-  margin-top: 3em;
-  padding: 1.5em 2.5em;
-  color: #EDD7C0;
+  margin-top: 0px;
+  font-size: 20px;
+  margin-top: 3.4em;
+  padding: .8em 1.8em 0.95em 1.8em;
+  color: #F8EADA;
+  background-color: #E99A7E;
   pointer-events: all;
   cursor: pointer;
   transition: all ease-in-out .4s;
-  border-radius: 50% 50% 50% 50% / 25% 25% 25% 25% ;
-  /* border-radius: 60% 60% 60% 60% / 30% 30% 30% 30% ; */
-  /* border-radius: 60% 60% 60% 60% / 35% 35% 35% 35% ; */
-  border: 2px solid #EDD7C0;
-  overflow: hidden;
-} 
+  /* border-radius: 50% 50% 50% 50% / 25% 25% 25% 25%;
+  border-radius: 60% 60% 60% 60% / 30% 30% 30% 30%;
+  border-radius: 60% 60% 60% 60% / 35% 35% 35% 35%; */
+  border-radius: 30px;
+  letter-spacing: 0.2px;
+}
 
-.btn-landingpage:before {
+.btn-landingpage::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0;
-  width: 110%;
-  height: 110%;
-  transform: translateY(50px);
+  top: 33px;
+  left: 50%;
+  margin-left: -20px;
+  width: 40px;
+  height: 40px;
+  transform: rotate(45deg);
   background-color: #E99A7E;
   z-index: -1;
+  border-radius: 4px;
   transition: all ease-in-out .4s;
 }
 
 .btn-landingpage:hover{
   color: #F8EADA;
   transition: all ease-in-out .4s;
+  animation: animation 1.0s ease-in-out infinite;
 } 
 
-.btn-landingpage:hover:before{
-  opacity: 1;
-  transform: translateY(0px);
-  transition: all ease-in-out .4s;
-} 
+@keyframes animation {
+0%   {transform: translateY(0px);}
+50%  {transform: translateY(7px);}
+100% {transform: translateY(0px);}
+}
 
 
 /**
@@ -224,16 +177,17 @@ p {
 
 #landingpage #hero {
   text-align: center;
+  margin-top: -1.398em;
 }
 
 
 #hero h1 {
-  font-size: 50px;
+  font-size: 100px;
 }
 
 #hero h2 {
   font-family: gopher, sans-serif;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: normal;
 }
 
@@ -412,11 +366,12 @@ p {
 }
 
 #support p {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: normal;
-  line-height: 1.6;
+  line-height: 28px;
   padding-top: 2.5em;
   color: #F8EADA;
+  width: 85%;
 }
 
 #plant-asset-01 {
@@ -607,6 +562,7 @@ img {
 *   FOOTER
 **/
 
+
 #footer {
   height: auto;
   padding-top: 5rem;
@@ -616,6 +572,22 @@ img {
   grid-template-columns: 3fr 3fr 3fr;
   grid-gap: 1rem;
   align-content: space-between;
+  z-index: 10;
+}
+
+#footer::after {
+  content: '';
+  background-image: url(../static/img/hintergrund-footer.png);
+  background-repeat: no-repeat;
+  background-size: 85%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.5;
+  background-position: right center;
 }
 
 #footer>div>h3 {
@@ -650,7 +622,7 @@ img {
 
 @media (max-width: 1550px) {
   #logo {
-    width: 10rem;
+    width: 150px;
   }
 
   #earth-icon a {
