@@ -309,9 +309,7 @@ p {
 #product-section {
   background-image: url(../static/img/brazil_blend_bg.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 0, -5em;
-  /* background-attachment: fixed; */
+  background-size: 101%;
   display: block;
   color: #E3C29E;
 }
@@ -387,6 +385,19 @@ p {
   z-index: 3;
 }
 
+#plant-asset-shop-01 {
+  background-image: url(../static/img/plant-shop-green.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  left: -5%;
+  bottom: -12%;
+  z-index: 3;
+  transform: rotate(16deg);
+}
+
 #bg-hill-asset {
   background-image: url(../static/textures/jungle_transition/background_hill_01.png);
   background-repeat: no-repeat;
@@ -407,12 +418,6 @@ p {
 /**
 *   Shop Section Styles
 **/
-
-#shop {
-  background-color: #F8EADA;
-  padding-top: 1em;
-  padding-bottom: 1em;
-}
 
 #shop h2 {
   color: #013936;
@@ -463,33 +468,45 @@ img {
 *   SHOP
 **/
 
-.product-card {
-  display: flex;
-  background-color: rgba(227, 194, 158, .25);
-  border-radius: 0 5px 5px 0;
+
+#shop {
+  background-color: #F8EADA;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  width: 100%;
+  height: 100vh;
 }
 
-.product-card h3 {
+
+.product-card {
+  display: flex;
+  justify-content: space-around;
+}
+
+.product-description h3 {
   font-family: 'BNBrickHouse';
   color: #013936;
-  font-size: 30px;
-  margin-bottom: 0.3em;
+  font-size: 80px;
 }
 
 .product-image {
-  background-position: center center;
-  background-image: url(/static/img/brazil-blend-shop.jpg);
+  background-image: url(/static/img/vertical_bag_mockup.png);
   background-repeat: no-repeat;
-  background-size: cover;
-  width: 33%;
-  height: 450px;
-  border-radius: 5px 0 0 5px;
+  background-size: 80%;
+  width: 50%;
+  height: 100%;
+  background-position: left center;
+  position: absolute;
+  left: 0;
+  top: 3%;
+  z-index: 1;
 }
 
 .product-description {
   width: 33%;
   padding-left: 0.5em;
-  padding-top: 0.5em;
+  padding-top: 1.2em;
+  z-index: 10;
 }
 
 
