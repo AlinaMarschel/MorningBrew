@@ -177,7 +177,7 @@ p {
 
 #landingpage #hero {
   text-align: center;
-  margin-top: -1.398em;
+  margin-top: -10.5%;
 }
 
 
@@ -238,7 +238,6 @@ p {
 
 #support h2,
 #shop h2 {
-  font-size: 4.2rem;
   font-family: 'BNBrickHouse';
   line-height: 1em;
 }
@@ -351,7 +350,7 @@ p {
 
 #support {
   padding-top: 10rem;
-  width: 66%;
+  width: 70%;
   color: #E3C29E;
   z-index: 10;
   position: relative;
@@ -398,6 +397,18 @@ p {
   transform: rotate(16deg);
 }
 
+#plant-asset-shop-02 {
+  background-image: url(../static/textures/jungle_transition/lianen02.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  right: -19%;
+  top: -26%;
+  z-index: 3;
+}
+
 #bg-hill-asset {
   background-image: url(../static/textures/jungle_transition/background_hill_01.png);
   background-repeat: no-repeat;
@@ -421,6 +432,14 @@ p {
 
 #shop h2 {
   color: #013936;
+}
+
+#product-info {
+  margin-top: 20px;
+}
+
+#product-info td:first-child {
+  padding: 0px 15px 12px 0;
 }
 
 .shop-btn {
@@ -475,18 +494,21 @@ img {
   padding-bottom: 1em;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 }
 
 
 .product-card {
   display: flex;
-  justify-content: space-around;
+  justify-content: end;
+  padding-top: 10%;
+  font-size: 16px;
 }
 
 .product-description h3 {
   font-family: 'BNBrickHouse';
   color: #013936;
-  font-size: 80px;
+  font-size: 64px;
 }
 
 .product-image {
@@ -505,10 +527,30 @@ img {
 .product-description {
   width: 33%;
   padding-left: 0.5em;
-  padding-top: 1.2em;
   z-index: 10;
 }
 
+#product-info p {
+  font-family: 'BNBrickHouse';
+  color: #013936;
+  font-size: 17px;
+}
+
+#product-add {
+  width: 33%;
+  margin-top: 78px;
+}
+
+.product-list {
+  margin-bottom: 35px;
+}
+
+.product-list p {
+  margin-bottom: 13px;
+  font-family: 'BNBrickHouse';
+  color: #013936;
+  font-size: 17.3px;
+}
 
 .product-amount {
   list-style-type: none;
@@ -516,13 +558,13 @@ img {
   margin: -0.2em 0 0.3em 0;
 }
 
-.product-amount li {
+.product-list-label {
   padding: 0;
   margin: 0;
   display: inline-block;
 }
 
-.product-amount li a {
+.product-list-label a {
   color: #013936;
   text-decoration: none;
   font-size: 16px;
@@ -533,7 +575,7 @@ img {
   transition: all ease-in-out .25s;
 }
 
-.product-amount li a:hover {
+.product-list-label a:hover {
   transition: all ease-in-out .25s;
   color: #F8EADA;
   background-color: #013936;
@@ -574,6 +616,8 @@ img {
   width: 33%;
   padding: 0.5em 0em 0 0.2em;
 }
+
+
 
 /**
 *   FOOTER
@@ -635,11 +679,17 @@ img {
   bottom: 0;
 }
 
-
+/**
+** MEDIA QUERIES
+**/
 
 @media (max-width: 1550px) {
   #logo {
     width: 150px;
+  }
+
+  #hero h1 {
+    font-size: 90px;
   }
 
   #earth-icon a {
@@ -657,7 +707,7 @@ img {
 
   #support h2,
   #shop h2 {
-    font-size: 60px;
+    font-size: 64px;
   }
 
   #support h3 {
@@ -666,9 +716,24 @@ img {
 
   #explore {
     font-size: 14px;
-    padding: 15px 25px;
+    padding: 15px 30px;
     margin-top: 35px;
     display: inline-block;
+  }
+
+  .btn-landingpage::after {
+    content: '';
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    margin-left: -15px;
+    width: 30px;
+    height: 30px;
+    transform: rotate(45deg);
+    background-color: #E99A7E;
+    z-index: -1;
+    border-radius: 4px;
+    transition: all ease-in-out .4s;
   }
 
   .shop-icon {
