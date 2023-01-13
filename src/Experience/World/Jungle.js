@@ -207,8 +207,8 @@ export default class Jungle {
         this.tlEnd = gsap.timeline()
         this.tlEnd.fromTo(this.plant05.position, {x:-80, y:-80}, {duration: 2.5, x:-8.5, y:-1.25, z:-18})
         this.tlEnd.fromTo(this.plant04.position, {x:80, y:-80}, {duration: 2.5, x:10, y:-2, z:-20}, ">-=2")
-        this.tlEnd.fromTo(this.lianen02.position, {y:80}, {duration: 2.5, x:5, y:-1, z:-21}, ">-=2")
-        this.tlEnd.fromTo(this.lianen01.position, {y:80}, {duration: 2.5, x:1, y:-8, z:-30}, ">-=2")
+        this.tlEnd.fromTo(this.lianen02.position, {y:80}, {duration: 2.5, x:5, y:-1.25, z:-21}, ">-=2")
+        this.tlEnd.fromTo(this.lianen01.position, {y:80}, {duration: 2.5, x:1, y:-10.5, z:-33}, ">-=2")
         
 
         return this.tlEnd
@@ -393,11 +393,11 @@ export default class Jungle {
         //this.backgroundHillSprite.position.set(12, 8, -53)
         this.backgroundHillSprite.position.set(-100, 8, -53)
 
-        this.backgroundHillSprite02.scale.set(25, 25, 0)
+        this.backgroundHillSprite02.scale.set(30, 30, 0)
         //this.backgroundHillSprite02.position.set(-12, 0, -30)
         this.backgroundHillSprite02.position.set(-100, 0, -30)
 
-        this.backgroundHillSprite03.scale.set(40, 40, 0)
+        this.backgroundHillSprite03.scale.set(44, 44, 0)
         //this.backgroundHillSprite03.position.set(15, 5, -40)
         this.backgroundHillSprite03.position.set(-100, 5, -40)
 
