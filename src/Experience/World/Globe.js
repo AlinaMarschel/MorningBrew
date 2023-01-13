@@ -34,7 +34,7 @@ export default class Globe {
     document.addEventListener("mousedown", () => this.onMouseDown(), false);
     document.addEventListener("mouseup", () => this.onMouseUp(), false);
     document.addEventListener("mouseout", () => this.onMouseUp(), false);
-    document.addEventListener("mousemove", (event) => this.onMouseMove(event),false);
+    document.addEventListener("mousemove", (event) => this.onMouseMove(event), false);
   }
 
   setTexture() {
@@ -91,18 +91,17 @@ export default class Globe {
     return angle * (Math.PI / 180);
   }
 
-  playAnimation() 
-  {     
+  playAnimation() {
     gsap.to(
       this.model.position, {
       duration: 25,
       // ease: 'power2.inOut',
-      ease:'power2.easeOut',
+      ease: 'power2.easeOut',
       y: -20
-  });  
+    });
   }
 
   update() {
-  
+    
   }
 }

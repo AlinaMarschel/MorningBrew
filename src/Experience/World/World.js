@@ -1,7 +1,5 @@
 import * as THREE from 'three'
 import Experience from "../Experience.js";
-import Coffeebag from './Coffeebag.js';
-import Coffeebeans from './Coffeebeans.js';
 import Coffeepin from './Coffeepin.js';
 import Globe from './Globe.js';
 import Jungle from './Jungle.js';
@@ -21,8 +19,6 @@ export default class World
         // Wait for Resources
         this.resources.on('ready', () =>
         {
-            //this.coffeebag = new Coffeebag()
-            //this.coffeebeans = new Coffeebeans()
             this.coffeePin = new Coffeepin()
             this.globe = new Globe()
             this.particles = new Particle()

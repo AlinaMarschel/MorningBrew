@@ -119,18 +119,6 @@ export default [
     // 3D Models
 
     {
-        name: 'coffeeBagModel',
-        type: 'gtlfModel',
-        path: 'models/coffeebag/coffee_bag_bake.glb'
-    },
-
-    {
-        name: 'coffeeBeansModel',
-        type: 'gtlfModel',
-        path: 'models/coffeebag/beans.glb'
-    },
-
-    {
         name: 'globeModel',
         type: 'gtlfModel',
         path: 'models/globe.glb'
