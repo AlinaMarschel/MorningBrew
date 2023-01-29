@@ -101,6 +101,15 @@ export default class Globe {
     });
   }
 
+  playBackToScreen() {
+    gsap.to(
+      this.model.position, {
+      duration: 2,
+      ease: 'power2.easeOut',
+      y: -2.5
+    });
+  }
+
   update() {
     
   }

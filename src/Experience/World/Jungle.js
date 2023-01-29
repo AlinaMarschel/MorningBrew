@@ -2,120 +2,6 @@ import * as THREE from 'three'
 import Experience from "../Experience";
 import { gsap } from "gsap";
 
-// const jungleSprites = [
-// //     {
-// //         source: "jungleBackground",
-// //         scale: {x:  18,  y: 18, z: 0},
-// //         position: {x: 0, y: 0, z: 0},
-// //         direction: "right",
-// //         targetX: 0,
-// //         targetY: 0
-// //     },
-// //     {
-// //         source: "jungleHillBackground",
-// //         scale: {x:  7,  y: 7, z: 0},
-// //         position: {x: 0, y: 0, z: 0},
-// //         direction: "left",
-// //         targetX: 0
-// //     },
-
-// //     {
-// //         source: "jungleHillBackground02",
-// //         scale: {x:  7,  y: 7, z: 0},
-// //         position: {x: 0, y: 0, z: 0},
-// //         direction: "left",
-// //         targetX: 0
-// //     },
-
-// //     {
-// //         source: "jungleHillBackground03",
-// //         scale: {x:  6,  y: 6, z: 0},
-// //         position: {x: 0, y: 0, z: 0},
-// //         direction: "left",
-// //         targetX: 0
-// //     },
-
-// //     {
-// //         source: "bgtree01",
-// //         scale: {x:  4,  y: 4, z: 0},
-// //         position: {x: 0, y: 0, z: 0},
-// //         direction: "left",
-// //         targetX: 8
-// //     },
-
-// //     {
-// //         source: "bgtree02",
-// //         scale: {x:  4,  y: 4, z: 0},
-// //         position: {x: 0, y: 0, z: 0},
-// //         direction: "left",
-// //         targetX: 0
-// //     },
-
-//     // {
-//     //     source: "plant01",
-//     //     scale: {x:  1,  y: 1, z: 0},
-//     //     position: {x: 3, y: 2, z: -10},
-//     //     direction: "left",
-//     //     targetX: 8
-//     // },
-
-//     // {
-//     //     source: "plant02",
-//     //     scale: {x:  3,  y: 3, z: 0},
-//     //     position: {x: -2.5, y: -0.45, z: 0},
-//     //     direction: "left",
-//     //     targetX: 8
-//     // },
-
-//     // {
-//     //     source: "plant03",
-//     //     scale: {x:  10,  y: 10, z: 0},
-//     //     position: {x: 0, y: 0, z: 0},
-//     //     direction: "left",
-//     //     targetX: 8
-//     // },
-
-//     // {
-//     //     source: "plant04",
-//     //     scale: {x:  10,  y: 10, z: 0},
-//     //     position: {x: 0, y: 0, z: 0},
-//     //     direction: "left",
-//     //     targetX: 8
-//     // },
-
-//     // {
-//     //     source: "plant05",
-//     //     scale: {x:  10,  y: 10, z: 0},
-//     //     position: {x: 0, y: 0, z: 0},
-//     //     direction: "left",
-//     //     targetX: 8
-//     // },
-
-//     // {
-//     //     source: "plant06",
-//     //     scale: {x:  10,  y: 10, z: 0},
-//     //     position: {x: 0, y: 0, z: 0},
-//     //     direction: "left",
-//     //     targetX: 8
-//     // },
-
-//     // {
-//     //     source: "lianen01",
-//     //     scale: {x:  10,  y: 10, z: 0},
-//     //     position: {x: 0, y: 0, z: 0},
-//     //     direction: "left",
-//     //     targetX: 8
-//     // },
-
-//     // {
-//     //     source: "lianen02",
-//     //     scale: {x:  10,  y: 10, z: 0},
-//     //     position: {x: 0, y: 0, z: 0},
-//     //     direction: "left",
-//     //     targetX: 8
-//     // }
-
-// ]
 
 
 export default class Jungle {
@@ -131,99 +17,87 @@ export default class Jungle {
         this.playPlantLoopAnimation()
     }
 
-    // playAnimation() {
-    //     for (let i = 0; i < jungleSprites.length; i++) {
-    //         const s = jungleSprites[i]
-
-    //         // let test = 0
-    //         // if(s.direction == "left") {
-    //         //     test = 5
-    //         // } else {
-    //         //     test = -5
-    //         // }
-
-    //         // gsap.to(s.sprite.position, {
-    //         //     x: s.direction === "left" ? -s.targetX : s.targetX,
-    //         //     duration: 5,
-    //         //     delay: i + 1
-    //         // })
-
-    //         // gsap.to(s.sprite.position, {
-    //         //     y: s.direction === "left" ? -s.targetY : s.targetY,
-    //         //     duration: 5,
-    //         //     delay: i + 1
-    //         // })
-    //     }
-
-    //     gsap.timeline()
-    //         .from(jungleSprites.find(x => x.source === "plant02"), {x: 5, duration:5})
-    // }
-
-    // Durchläuft das Object Array "jungleSprites"
-    // Jedem Element werden die Textur, Material und Position zugewiesen
-    // Jedes Element wird der Scene hinzugefügt
-    // initLayers() {
-    //     jungleSprites.forEach(s => {
-    //         const texture = this.resources.items[s.source]
-    //         texture.encoding = THREE.sRGBEncoding
-    //         const material = new THREE.SpriteMaterial({ map: texture })
-    //         const sprite = new THREE.Sprite(material)
-
-    //         sprite.position.set(s.position.x, s.position.y, s.position.z)
-    //         sprite.scale.set(s.scale.x, s.scale.y, s.scale.z)
-
-    //         this.scene.add(sprite)
-
-    //         s.sprite = sprite
-    //     })
-    // }
-
-    timelineIntro() 
-    {
+    timelineIntro() {
         this.tlIntro = gsap.timeline()
 
-        this.tlIntro.fromTo(this.backgroundSprite.position, {y:80, z:-80}, {duration: 4, y:0, z:-55})
-        this.tlIntro.fromTo(this.backgroundHillSprite02.position, {x: -80 }, {duration:2, x:-12, y:0}, ">-=4")
-        this.tlIntro.fromTo(this.backgroundHillSprite03.position, {x: 80}, {duration:2, x:15}, ">-=1")
-        this.tlIntro.fromTo(this.backgroundHillSprite.position, {x:-80}, {duration:2, x:0, y:5.5}, ">-=2")
+        this.tlIntro.fromTo(this.backgroundSprite.position, { y: 80, z: -80 }, { duration: 4, y: 0, z: -55 })
+        this.tlIntro.fromTo(this.backgroundHillSprite02.position, { x: -80 }, { duration: 2, x: -12, y: 0 }, ">-=4")
+        this.tlIntro.fromTo(this.backgroundHillSprite03.position, { x: 80 }, { duration: 2, x: 15 }, ">-=1")
+        this.tlIntro.fromTo(this.backgroundHillSprite.position, { x: -80 }, { duration: 2, x: 0, y: 5.5 }, ">-=2")
 
         return this.tlIntro
     }
 
-    timelineMiddle()
-    {
+    timelineMiddle() {
         this.tlMiddle = gsap.timeline()
 
-        this.tlMiddle.fromTo(this.backgroundTree02.position, {x:80, y: -80}, {duration: 2, x:1.25, y:0.25, z:-23})
-        this.tlMiddle.fromTo(this.backgroundTree01.position, {x:-80}, {duration: 2, x:-4.5, z:-25}, ">-=2")
-        this.tlMiddle.fromTo(this.plant02.position, {x:-80, y:-80}, {duration: 2.5, x:-13, y:-5, z:-40}, ">-=2")
-        this.tlMiddle.fromTo(this.plant03.position, {x:80, y:-80}, {duration: 2.5, x:11, y:-2.25, z:-34}, ">-=2")
+        this.tlMiddle.fromTo(this.backgroundTree02.position, { x: 80, y: -80 }, { duration: 2, x: 1.25, y: 0.25, z: -23 })
+        this.tlMiddle.fromTo(this.backgroundTree01.position, { x: -80 }, { duration: 2, x: -4.5, z: -25 }, ">-=2")
+        this.tlMiddle.fromTo(this.plant02.position, { x: -80, y: -80 }, { duration: 2.5, x: -13, y: -5, z: -40 }, ">-=2")
+        this.tlMiddle.fromTo(this.plant03.position, { x: 80, y: -80 }, { duration: 2.5, x: 11, y: -2.25, z: -34 }, ">-=2")
 
         return this.tlMiddle
     }
 
-    timelineEnd()
-    {
+    timelineEnd() {
         this.tlEnd = gsap.timeline()
-        this.tlEnd.fromTo(this.plant05.position, {x:-80, y:-80}, {duration: 2.5, x:-8.5, y:-1.25, z:-18})
-        this.tlEnd.fromTo(this.plant04.position, {x:80, y:-80}, {duration: 2.5, x:10, y:-2, z:-20}, ">-=2")
-        this.tlEnd.fromTo(this.lianen02.position, {y:80}, {duration: 2.5, x:5, y:-1.25, z:-21}, ">-=2")
-        this.tlEnd.fromTo(this.lianen01.position, {y:80}, {duration: 2.5, x:1, y:-10.5, z:-33}, ">-=2")
-        
+        this.tlEnd.fromTo(this.plant05.position, { x: -80, y: -80 }, { duration: 2.5, x: -8.5, y: -1.25, z: -18 })
+        this.tlEnd.fromTo(this.plant04.position, { x: 80, y: -80 }, { duration: 2.5, x: 10, y: -2, z: -20 }, ">-=2")
+        this.tlEnd.fromTo(this.lianen02.position, { y: 80 }, { duration: 2.5, x: 5, y: -1.25, z: -21 }, ">-=2")
+        this.tlEnd.fromTo(this.lianen01.position, { y: 80 }, { duration: 2.5, x: 1, y: -10.5, z: -33 }, ">-=2")
 
         return this.tlEnd
+    }
+
+
+    timelineBackToScreen() {
+
+        this.tlBacktoScreen = gsap.timeline()
+
+        this.tlIntro.to(this.backgroundSprite.position, { y: -100, z: -100, duration: .2 })
+        this.tlIntro.to(this.backgroundHillSprite02.position, { x: -100, duration: .2 }, ">-=4")
+        this.tlIntro.to(this.backgroundHillSprite03.position, { x: -100, duration: .2 }, ">-=1")
+        this.tlIntro.to(this.backgroundHillSprite.position, { x: -100, duration: .2 }, ">-=2")
+
+        this.tlMiddle.to(this.backgroundTree02.position, { x: 80, y: -80, duration: .2 })
+        this.tlMiddle.to(this.backgroundTree01.position, { x: -80, duration: .2 }, ">-=2")
+        this.tlMiddle.to(this.plant02.position, { x: -80, y: -80, duration: .2 }, ">-=2")
+        this.tlMiddle.to(this.plant03.position, { x: 80, y: -80, duration: .2 }, ">-=2")
+
+        this.tlEnd.to(this.plant05.position, { x: -80, duration: .2 })
+        this.tlEnd.to(this.plant04.position, { x: 80, duration: .2 }, ">-=2")
+        this.tlEnd.to(this.lianen02.position, { y: 80, duration: .2 }, ">-=2")
+        this.tlEnd.to(this.lianen01.position, { y: 80, duration: .2 }, ">-=2")
+
+        return this.tlBacktoScreen
     }
 
     playAnimation() {
         this.masterTimeline = gsap.timeline()
         this.masterTimeline.add(this.timelineIntro())
-                            .add(this.timelineMiddle(), "-=4")
-                            .add(this.timelineEnd(), "-=5")
+            .add(this.timelineMiddle(), "-=4")
+            .add(this.timelineEnd(), "-=5")
+    }
+
+
+    playBackToScreen() {
+        gsap.to(this.backgroundSprite.position, { y: -100, z: -100, duration: .0025 })
+        gsap.to(this.backgroundHillSprite02.position, { y: -100, z: -100, duration: .0025 })
+        gsap.to(this.backgroundHillSprite03.position, { y: -100, z: -100, duration: .0025 })
+        gsap.to(this.backgroundHillSprite.position, { y: -100, z: -100, duration: .0025 })
+        gsap.to(this.backgroundTree02.position, { y: -100, z: -100, duration: .0025 })
+        gsap.to(this.backgroundTree01.position, { y: -100, z: -100, duration: .0025 })
+        gsap.to(this.plant02.position, { y: -100, z: -100, duration: .0025 })
+        gsap.to(this.plant03.position, { y: -100, z: -100, duration: .0025 })
+        gsap.to(this.plant05.position, { y: -100, z: -100, duration: .0025 })
+        gsap.to(this.plant04.position, { y: -100, z: -100, duration: .0025 })
+        gsap.to(this.lianen01.position, { y: -100, z: -100, duration: .0025 })
+        gsap.to(this.lianen02.position, { y: -100, z: -100, duration: .0025 })
     }
 
     playPlantLoopAnimation() {
-        gsap.fromTo(this.plant01Material, {rotation:-0.5}, {duration: 5.5, rotation:-0.58, yoyo: true, repeat: Infinity});  
-        gsap.fromTo(this.plant06Material, {rotation:0.8}, {duration: 2.5, rotation:0.845, yoyo: true, repeat: Infinity});  
+        gsap.fromTo(this.plant01Material, { rotation: -0.5 }, { duration: 5.5, rotation: -0.58, yoyo: true, repeat: Infinity });
+        gsap.fromTo(this.plant06Material, { rotation: 0.8 }, { duration: 2.5, rotation: 0.845, yoyo: true, repeat: Infinity });
     }
 
     setSprite() {
@@ -404,7 +278,7 @@ export default class Jungle {
         this.backgroundTree01.scale.set(14, 14, 0)
         //this.backgroundTree01.position.set(-4.25, 0.25, -10)
         this.backgroundTree01.position.set(-100, 0.25, -10)
-        
+
         this.backgroundTree02.scale.set(14, 14, 0)
         //this.backgroundTree02.position.set(1, 0, 0)
         this.backgroundTree02.position.set(-100, 0, 0)
@@ -479,15 +353,6 @@ export default class Jungle {
     // Debug
     debugJungle() {
 
-        //Background
-        // this.debug.ui.add(this.backgroundSprite.position, 'x', -4, 30, 0.01).name('bg // x-pos:')
-        // this.debug.ui.add(this.backgroundSprite.position, 'y', -4, 30, 0.01,).name('bg // y-pos:')
-
-        // this.debug.ui.add(this.backgroundHillSprite.position, 'x', -4, 30, 0.01).name('bgHill01 // x-pos:')
-        // this.debug.ui.add(this.backgroundHillSprite.position, 'y', -4, 30, 0.01,).name('bgHill01 // y-pos:')
-
-        // this.debug.ui.add(this.backgroundHillSprite02.position, 'x', -4, 30, 0.01).name('bgHill02 // x-pos:')
-        // this.debug.ui.add(this.backgroundHillSprite02.position, 'y', -4, 30, 0.01,).name('bgHill02 // y-pos:')
 
         //Trees
         this.debug.ui.add(this.backgroundTree01.position, 'x', -4, 30, 0.01).name('bgTree01 // x-pos:')
