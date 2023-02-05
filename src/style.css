@@ -68,24 +68,6 @@ p {
   padding-right: 10%;
 }
 
-/* @keyframes anim {
-0%   {box-shadow: 0px 0px 50px #E3C29E;}
-50%  {box-shadow: 0px 0px 10px #E3C29E;}
-100% {box-shadow: 0px 0px 50px #E3C29E;}
-}
-
-@-webkit-keyframes anim {
-0%   {box-shadow: 0px 0px 50px #E3C29E;}
-50%  {box-shadow: 0px 0px 10px #E3C29E;}
-100% {box-shadow: 0px 0px 50px #E3C29E;}
-} */
-
-/* @keyframes anim {
-  0%   {background-position: -150px 20px;}
-  100% {background-position: -50px 10px;}
-  } */
-
-
 .btn-landingpage {
   font-family: 'BNBrickHouse';
   display: inline-block;
@@ -100,9 +82,6 @@ p {
   pointer-events: all;
   cursor: pointer;
   transition: all ease-in-out .4s;
-  /* border-radius: 50% 50% 50% 50% / 25% 25% 25% 25%;
-  border-radius: 60% 60% 60% 60% / 30% 30% 30% 30%;
-  border-radius: 60% 60% 60% 60% / 35% 35% 35% 35%; */
   border-radius: 30px;
   letter-spacing: 0.2px;
 }
@@ -177,7 +156,7 @@ p {
 
 #landingpage #hero {
   text-align: center;
-  margin-top: -10.5%;
+  margin-top: -8.5%;
 }
 
 
@@ -240,6 +219,7 @@ p {
 #shop h2 {
   font-family: 'BNBrickHouse';
   line-height: 1em;
+  font-size: 64px;
 }
 
 .btn {
@@ -254,8 +234,6 @@ p {
   cursor: pointer;
   transition: all ease-in-out .4s;
   border-radius: 50% 50% 50% 50% / 25% 25% 25% 25% ;
-  /* border-radius: 60% 60% 60% 60% / 30% 30% 30% 30% ; */
-  /* border-radius: 60% 60% 60% 60% / 35% 35% 35% 35% ; */
   border: 2px solid #EDD7C0;
   overflow: hidden;
 }
@@ -349,7 +327,7 @@ p {
 #support p {
   font-size: 18px;
   font-weight: normal;
-  line-height: 28px;
+  line-height: 32px;
   padding-top: 2.5em;
   color: #F8EADA;
   width: 85%;
@@ -462,17 +440,7 @@ p {
   margin-bottom: 1.8rem;
 }
 
-/* #explore {
-  background-color: #E99A7E;
-  color: #013936;
-  font-size: 1rem;
-  padding: 1.2rem 2rem;
-}
 
-#explore:hover {
-  background-color: #F8EADA;
-  cursor: pointer;
-} */
 
 /** 
 *   Shop Card Items
@@ -607,20 +575,6 @@ img {
   margin-top: 27px;
 }
 
-/* .grind a:active,
-.grind a:focus {
-  transition: all ease-in-out .25s;
-  color: #F8EADA;
-  background-color: #013936;
-}
-
-.amount a:active,
-.amount a:focus {
-  transition: all ease-in-out .25s;
-  color: #F8EADA;
-  background-color: #013936;
-} */
-
 .attribute-points {
   margin: -0.6em 0 0 0;
   padding: 0 !important;
@@ -728,8 +682,21 @@ img {
     width: 150px;
   }
 
+  #landingpage #hero {
+    text-align: center;
+    margin-top: -10.5%;
+  }  
+
   #hero h1 {
     font-size: 90px;
+  }
+
+  .btn-landingpage {
+    margin-top: 3.4em;
+  }
+
+  #support p {
+    line-height: 28px;
   }
 
   #earth-icon a {
