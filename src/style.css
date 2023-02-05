@@ -543,7 +543,7 @@ img {
 }
 
 .product-list {
-  margin-bottom: 35px;
+  margin-bottom: 22px;
 }
 
 .product-list p {
@@ -601,6 +601,10 @@ img {
 .radio-btn-grind:checked + .product-list-label:hover {
   background-color: #013936;
   opacity: 1;
+}
+
+.add-to-cart {
+  margin-top: 27px;
 }
 
 /* .grind a:active,
