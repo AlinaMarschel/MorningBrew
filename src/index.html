@@ -158,7 +158,9 @@
                 <div>
                     <h3>Coffeenews</h3>
                     <p>never miss out on our newest blends and products. We will give you tips and tricks to make your
-                        <span style="font-family: 'BNBrickHouse';">morning brew</span> perfect. <a href="#" title="Join Newsletter">Click and join us!</a></p>
+                        <span style="font-family: 'BNBrickHouse';">morning brew</span> perfect. <a href="#"
+                            title="Join Newsletter">Click and join us!</a>
+                    </p>
                 </div>
                 <div>
                     <span><img src="/static/img/morning_brew_signet.png" alt="Morning Brew Signet"></span>
@@ -166,7 +168,30 @@
             </section>
         </footer>
     </section>
-    <script src="./Experience/Utils/parallax.js"></script>
+    <!--
+        <script src="./Experience/Utils/parallax.js">
+    -->
+    <script>
+        // source code for parallax effect by https://codepen.io/oscicen/pen/zyJeJw
+
+        (function () {
+            // Add event listener
+            document.addEventListener("mousemove", parallax);
+            const elem = document.querySelector("#product-section");
+            // Magic happens here
+            function parallax(e) {
+                let _w = window.innerWidth / 2;
+                let _h = window.innerHeight / 2;
+                let _mouseX = e.clientX;
+                let _mouseY = e.clientY;
+                let _depth1 = `${30 - (_mouseX - _w) * 0.02}% ${30 - (_mouseY - _h) * 0.02}%`;
+                let x = `${_depth1}`;
+                elem.style.backgroundPosition = x;
+            }
+
+        })();
+
+    </script>
 </body>
 
 </html>
